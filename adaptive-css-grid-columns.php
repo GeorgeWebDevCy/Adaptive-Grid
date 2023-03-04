@@ -302,7 +302,35 @@ function is_scss_working()
 
 	return true; // If the SCSS code was successfully compiled, return true
 }
-
+function writeToFile($filename, $content) {
+	if (!file_exists($filename)) {
+	  echo "<script>console.error('File not found: " . $filename . "')</script>";
+	  return false;
+	}
+	
+	if (!is_writable($filename)) {
+	  echo "<script>console.error('File is not writable: " . $filename . "')</script>";
+	  return false;
+	}
+  
+	$file = fopen($filename, "a");
+	if ($file === false) {
+	  echo "<script>console.error('Unable to open file for writing: " . $filename . "')</script>";
+	  return false;
+	}
+  
+	if (fwrite($file, $content) === false) {
+	  echo "<script>console.error('Unable to write to file: " . $filename . "')</script>";
+	  fclose($file);
+	  return false;
+	}
+  
+	fclose($file);
+	echo "<script>console.log('Content written successfully to file: " . $filename . "')</script>";
+	return true;
+  }
+  
+  
 function copyFileContents($sourceFile, $destFile) {
 	$sourceHandle = fopen($sourceFile, "r");
 	$destHandle = fopen($destFile, "w");
@@ -376,19 +404,20 @@ function ADAPTIVECS()
 			$s4 = sprintf('$max-column-count-lg: %s;', $max_column_count_lg);
 			$s5 = sprintf('$gap: %srem;', $gap);
 /* write vars to file based on db values*/
-
-			
-fwrite($scssfile, $s1);
-fwrite($scssfile, "\n");
-fwrite($scssfile, $s2);
-fwrite($scssfile, "\n");
-fwrite($scssfile, $s3);
-fwrite($scssfile, "\n");
-fwrite($scssfile, $s4);
-fwrite($scssfile, "\n");
-fwrite($scssfile, $s5);
-fwrite($scssfile, "\n");
-			//fwrite($cssfile, $scss->compileString('@import "mike-style.scss";')->getCss());
+$scssfilename = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss';
+$sourcefilename = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';			
+writeToFile($scssfilename, $s1);
+writeToFile($scssfilename, "\n");
+writeToFile($scssfilename, $s2);
+writeToFile($scssfilename, "\n");
+writeToFile($scssfilename, $s3);
+writeToFile($scssfilename, "\n");
+writeToFile($scssfilename, $s4);
+writeToFile($scssfilename, "\n");
+writeToFile($scssfilename, $s5);
+writeToFile($scssfilename, "\n");
+copyFileContents($sourcefilename,$scssfilename);
+//echo fwrite($cssfile, $scss->compileString('@import "mike-style.scss";')->getCss());
 			fclose($scssfile);
 			fclose($cssfile);
 			$message = 'CSS file written successfully';
