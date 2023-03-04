@@ -24,7 +24,8 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH'))
+	exit;
 
 /**
  * HELPER COMMENT START
@@ -44,28 +45,26 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 
 // Plugin name
-define( 'ADAPTIVECS_NAME',			'Adaptive CSS Grid Columns' );
+define('ADAPTIVECS_NAME', 'Adaptive CSS Grid Columns');
 
 // Plugin version
-define( 'ADAPTIVECS_VERSION',		'1.0.0' );
+define('ADAPTIVECS_VERSION', '1.0.0');
 
 // Plugin Root File
-define( 'ADAPTIVECS_PLUGIN_FILE',	__FILE__ );
+define('ADAPTIVECS_PLUGIN_FILE', __FILE__);
 
 // Plugin base
-define( 'ADAPTIVECS_PLUGIN_BASE',	plugin_basename( ADAPTIVECS_PLUGIN_FILE ) );
+define('ADAPTIVECS_PLUGIN_BASE', plugin_basename(ADAPTIVECS_PLUGIN_FILE));
 
 // Plugin Folder Path
-define( 'ADAPTIVECS_PLUGIN_DIR',	plugin_dir_path( ADAPTIVECS_PLUGIN_FILE ) );
+define('ADAPTIVECS_PLUGIN_DIR', plugin_dir_path(ADAPTIVECS_PLUGIN_FILE));
 
 // Plugin Folder URL
-define( 'ADAPTIVECS_PLUGIN_URL',	plugin_dir_url( ADAPTIVECS_PLUGIN_FILE ) );
+define('ADAPTIVECS_PLUGIN_URL', plugin_dir_url(ADAPTIVECS_PLUGIN_FILE));
 
 /**
  * Load the main class for the core functionality
  */
-require_once ADAPTIVECS_PLUGIN_DIR . 'core/class-adaptive-css-grid-columns.php';
-
 //Load Composer's autoloader
 
 
@@ -313,7 +312,84 @@ function is_scss_working()
  * @since   1.0.0
  * @return  object|Adaptive_Css_Grid_Columns
  */
-function ADAPTIVECS() {
+function ADAPTIVECS()
+{
+	if (is_scss_working()) {
+		// SCSS is working, do something
+		$message = "SCSS is working";
+		//echo "<script>console.log('$message');</script>";
+		//get scss file
+
+		$scss = new Compiler(); // Initialize the scssphp compiler
+		$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
+		//$scss->compileString('@import "style.scss";')->getCss();
+
+		// Write the CSS to the file
+		$cssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', 'w');
+		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss', 'w');
+		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss', 'r');
+		//$result = file_put_contents(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', $scss);
+
+		// Check the result
+		if ($scssfile === false || $cssfile === false ) {
+			// There was an error writing the file
+
+			$message = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css';
+			echo "<script>console.log('$message');</script>";
+			$message = 'Error writing CSS file';
+			echo "<script>console.log('$message');</script>";
+		} else {
+			// The file was written successfully
+			//get options 
+			$options = get_option('adaptivecs_options');
+			$scss = new Compiler(); // Initialize the scssphp compiler
+			$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
+			/* write vars to file based on db values*/
+		    $bp_md = $options['bp_md'];
+			$bp_lg = $options['bp_lg'];
+			$max_column_count_md = $options['max_column_count_md'];
+			$max_column_count_lg = $options['max_column_count_lg'];
+			$gap = $options['gap'];
+			
+			//fwrite($file, $scss->compileString('@import "style.scss";')->getCss());
+			$s1 = sprintf('$bp-md: %sem;', $bp_md);
+			$s2 = sprintf('$bp-lg: %sem;', $bp_lg);
+		    $s3 = sprintf('$max-column-count-md: %s;', $max_column_count_md);
+			$s4 = sprintf('$max-column-count-lg: %s;', $max_column_count_lg);
+			$s5 = sprintf('$gap: %srem;', $gap);
+/* write vars to file based on db values*/
+
+			
+echo fwrite($scssfile, $s1);
+echo fwrite($scssfile, "\n");
+echo fwrite($scssfile, $s2);
+echo fwrite($scssfile, "\n");
+echo fwrite($scssfile, $s3);
+echo fwrite($scssfile, "\n");
+echo fwrite($scssfile, $s4);
+echo fwrite($scssfile, "\n");
+echo fwrite($scssfile, $s5);
+echo fwrite($scssfile, "\n");
+			//fwrite($cssfile, $scss->compileString('@import "mike-style.scss";')->getCss());
+			fclose($scssfile);
+			fclose($cssfile);
+			$message = 'CSS file written successfully';
+			echo "<script>console.log('$message');</script>";
+			echo "<script>console.log('$s1');</script>";
+			echo "<script>console.log('$s2');</script>";
+			echo "<script>console.log('$s3');</script>";
+			echo "<script>console.log('$s4');</script>";
+			echo "<script>console.log('$s5');</script>";
+
+		}
+
+
+
+	} else {
+		// SCSS is not working, do something else
+		$message = "SCSS is NOT working";
+		//echo "<script>console.log('$message');</script>";
+	}
 	return Adaptive_Css_Grid_Columns::instance();
 }
 
