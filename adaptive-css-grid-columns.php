@@ -303,7 +303,24 @@ function is_scss_working()
 	return true; // If the SCSS code was successfully compiled, return true
 }
 
-
+function copyFileContents($sourceFile, $destFile) {
+	$sourceHandle = fopen($sourceFile, "r");
+	$destHandle = fopen($destFile, "w");
+  
+	if ($sourceHandle && $destHandle) {
+	  while (!feof($sourceHandle)) {
+		$buffer = fread($sourceHandle, 4096);
+		fwrite($destHandle, $buffer);
+	  }
+  
+	  fclose($sourceHandle);
+	  fclose($destHandle);
+	  return true;
+	} else {
+	  return false;
+	}
+  }
+  
 /**
  * The main function to load the only instance
  * of our master class.
@@ -316,8 +333,8 @@ function ADAPTIVECS()
 {
 	if (is_scss_working()) {
 		// SCSS is working, do something
-		$message = "SCSS is working";
-		//echo "<script>console.log('$message');</script>";
+		$message = "SCSS Compiler is initialized";
+		echo "<script>console.log('$message');</script>";
 		//get scss file
 
 		$scss = new Compiler(); // Initialize the scssphp compiler
@@ -328,13 +345,14 @@ function ADAPTIVECS()
 		$cssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', 'w');
 		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss', 'w');
 		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss', 'r');
+
+
 		//$result = file_put_contents(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', $scss);
 
 		// Check the result
 		if ($scssfile === false || $cssfile === false ) {
 			// There was an error writing the file
 
-			$message = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css';
 			echo "<script>console.log('$message');</script>";
 			$message = 'Error writing CSS file';
 			echo "<script>console.log('$message');</script>";
@@ -351,7 +369,7 @@ function ADAPTIVECS()
 			$max_column_count_lg = $options['max_column_count_lg'];
 			$gap = $options['gap'];
 			
-			//fwrite($file, $scss->compileString('@import "style.scss";')->getCss());
+			//fwrite($scssfile, $scss->compileString('@import "style.scss";')->getCss());
 			$s1 = sprintf('$bp-md: %sem;', $bp_md);
 			$s2 = sprintf('$bp-lg: %sem;', $bp_lg);
 		    $s3 = sprintf('$max-column-count-md: %s;', $max_column_count_md);
@@ -360,16 +378,16 @@ function ADAPTIVECS()
 /* write vars to file based on db values*/
 
 			
-echo fwrite($scssfile, $s1);
-echo fwrite($scssfile, "\n");
-echo fwrite($scssfile, $s2);
-echo fwrite($scssfile, "\n");
-echo fwrite($scssfile, $s3);
-echo fwrite($scssfile, "\n");
-echo fwrite($scssfile, $s4);
-echo fwrite($scssfile, "\n");
-echo fwrite($scssfile, $s5);
-echo fwrite($scssfile, "\n");
+fwrite($scssfile, $s1);
+fwrite($scssfile, "\n");
+fwrite($scssfile, $s2);
+fwrite($scssfile, "\n");
+fwrite($scssfile, $s3);
+fwrite($scssfile, "\n");
+fwrite($scssfile, $s4);
+fwrite($scssfile, "\n");
+fwrite($scssfile, $s5);
+fwrite($scssfile, "\n");
 			//fwrite($cssfile, $scss->compileString('@import "mike-style.scss";')->getCss());
 			fclose($scssfile);
 			fclose($cssfile);
