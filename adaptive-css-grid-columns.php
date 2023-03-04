@@ -66,6 +66,245 @@ define( 'ADAPTIVECS_PLUGIN_URL',	plugin_dir_url( ADAPTIVECS_PLUGIN_FILE ) );
  */
 require_once ADAPTIVECS_PLUGIN_DIR . 'core/class-adaptive-css-grid-columns.php';
 
+//Load Composer's autoloader
+
+
+require_once ADAPTIVECS_PLUGIN_DIR . 'core/class-adaptive-css-grid-columns.php';
+require_once ADAPTIVECS_PLUGIN_DIR . 'vendor/autoload.php';
+require_once ADAPTIVECS_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
+
+use ScssPhp\ScssPhp\Compiler;
+
+
+
+// Register a custom menu page to add the options
+function adaptivecs_options_page()
+{
+	add_menu_page(
+		'Adaptive CSS Grid Columns Options',
+		// Page title
+		'ACGC Options',
+		// Menu title
+		'manage_options',
+		// Capability required to access the menu
+		'adaptivecs_options',
+		// Menu slug
+		'adaptivecs_options_page_content',
+		// Callback function to render the page content
+		'dashicons-layout' // Icon for the menu
+	);
+}
+add_action('admin_menu', 'adaptivecs_options_page');
+
+// Render the options page content
+function adaptivecs_options_page_content()
+{
+	?>
+	<div class="wrap">
+		<h1>Adaptive CSS Grid Columns Options</h1>
+		<form method="post" action="options.php">
+			<?php settings_fields('adaptivecs_options_group'); ?>
+			<?php do_settings_sections('adaptivecs_options'); ?>
+			<?php submit_button(); ?>
+		</form>
+	</div>
+<?php
+}
+
+// Register the options and settings
+function adaptivecs_register_options()
+{
+	register_setting(
+		'adaptivecs_options_group',
+		// Option group
+		'adaptivecs_options',
+		// Option name
+		'adaptivecs_options_sanitize' // Sanitization callback function
+	);
+
+	add_settings_section(
+		'adaptivecs_section',
+		// Section ID
+		'Max Column Counts',
+		// Section title
+		'adaptivecs_section_callback',
+		// Callback function to render the section
+		'adaptivecs_options' // Page slug
+	);
+
+	add_settings_field(
+		'max_column_count_md',
+		// Field ID
+		'Max Column Count (medium)',
+		// Field label
+		'adaptivecs_max_column_count_md_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
+	add_settings_field(
+		'max_column_count_lg',
+		// Field ID
+		'Max Column Count (large)',
+		// Field label
+		'adaptivecs_max_column_count_lg_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
+	add_settings_field(
+		'gap',
+		// Field ID
+		'Gap (in rem)',
+		// Field label
+		'adaptivecs_gap_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
+	add_settings_field(
+		'bp_md',
+		// Field ID
+		'Medium Breakpoint (in rem)',
+		// Field label
+		'adaptivecs_bp_md_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
+
+	add_settings_field(
+		'bp_lg',
+		// Field ID
+		'Large Breakpoint (in rem)',
+		// Field label
+		'adaptivecs_bp_lg_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
+}
+add_action('admin_init', 'adaptivecs_register_options');
+
+// Sanitize the options before saving
+function adaptivecs_options_sanitize($options)
+{
+	$sanitized_options = array();
+	$sanitized_options['max_column_count_md'] = absint($options['max_column_count_md']);
+	$sanitized_options['max_column_count_lg'] = absint($options['max_column_count_lg']);
+	$sanitized_options['gap'] = ($options['gap']);
+	$sanitized_options['bp_md'] = ($options['bp_md']);
+	$sanitized_options['bp_lg'] = ($options['bp_lg']);
+
+	return $sanitized_options;
+}
+
+// Render the section description
+function adaptivecs_section_callback()
+{
+	echo '<p>Enter the max column counts for different screen sizes.</p>';
+}
+
+// Render the max_column_count_md field
+function adaptivecs_max_column_count_md_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[max_column_count_md]" value="' . $options['max_column_count_md'] . '" />';
+}
+
+// Render the max_column_count_lg field
+function adaptivecs_max_column_count_lg_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[max_column_count_lg]" value="' . $options['max_column_count_lg'] . '" />';
+}
+
+// Render the gap field
+function adaptivecs_gap_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[gap]" step="0.1" value="' . $options['gap'] . '" />';
+}
+
+function adaptivecs_bp_md_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[bp_md]" step="0.1" value="' . $options['bp_md'] . '" />';
+}
+
+function adaptivecs_bp_lg_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[bp_lg]" step="0.1" value="' . $options['bp_lg'] . '" />';
+}
+
+function enqueue_my_styles()
+{
+	wp_enqueue_style('my-styles', plugin_dir_url(__FILE__) . 'assets/stylesheets/style.css');
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_my_styles');
+
+function grid_container_shortcode($atts, $content = null)
+{
+	$atts = shortcode_atts(
+		array(
+			'columns' => '1',
+			'rows' => '1',
+		),
+		$atts,
+		'grid_container'
+	);
+
+	$grid_items = explode(',', $content);
+	$grid_items_html = '';
+
+	foreach ($grid_items as $grid_item) {
+		$grid_items_html .= '<div class="grid-item">' . trim($grid_item) . '</div>';
+	}
+
+	$grid_container_html = '<div class="grid-container">';
+	$grid_container_html .= $grid_items_html;
+	$grid_container_html .= '</div>';
+
+	return $grid_container_html;
+}
+add_shortcode('grid_container', 'grid_container_shortcode');
+
+
+function is_scss_working()
+{
+	$scss = new Compiler(); // Initialize the scssphp compiler
+	$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
+	$scss->compileString('@import "style.scss";')->getCss();
+
+
+	$scss_code = 'body { color: red; }'; // Define a sample SCSS code to compile
+
+	try {
+		$css_code = $scss->compileString($scss_code); // Compile the SCSS code into CSS
+	} catch (\Exception $e) {
+		return false; // If an error occurred, return false
+	}
+
+	if (empty($css_code)) {
+		return false; // If the compiled CSS code is empty, return false
+	}
+
+	return true; // If the SCSS code was successfully compiled, return true
+}
+
+
 /**
  * The main function to load the only instance
  * of our master class.
