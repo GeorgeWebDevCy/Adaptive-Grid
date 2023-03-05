@@ -74,7 +74,28 @@ require_once ADAPTIVECS_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
 
 use ScssPhp\ScssPhp\Compiler;
 
+// Register activation and deactivation hooks
+register_activation_hook( __FILE__, 'adaptivecs_activate' );
+register_deactivation_hook( __FILE__, 'adaptivecs_deactivate' );
 
+// Define activation function
+function adaptivecs_activate() {
+    // Add default options upon activation
+    $options = array(
+        'bp_md' => 45,
+        'bp_lg' => 65,
+        'max_column_count_md' => 2,
+        'max_column_count_lg' => 4,
+        'gap' => 1.5
+    );
+    add_option( 'adaptivecs_options', $options );
+}
+
+// Define deactivation function
+function adaptivecs_deactivate() {
+    // Remove options when plugin is deactivated
+    delete_option( 'adaptivecs_options' );
+}
 
 // Register a custom menu page to add the options
 function adaptivecs_options_page()
@@ -304,29 +325,29 @@ function is_scss_working()
 }
 function writeToFile($filename, $content) {
 	if (!file_exists($filename)) {
-	  echo "<script>console.error('File not found: " . $filename . "')</script>";
+	  //echo "<script>console.error('File not found: " . $filename . "')</script>";
 	  return false;
 	}
 	
 	if (!is_writable($filename)) {
-	  echo "<script>console.error('File is not writable: " . $filename . "')</script>";
+	  //echo "<script>console.error('File is not writable: " . $filename . "')</script>";
 	  return false;
 	}
   
 	$file = fopen($filename, "a");
 	if ($file === false) {
-	  echo "<script>console.error('Unable to open file for writing: " . $filename . "')</script>";
+	  //echo "<script>console.error('Unable to open file for writing: " . $filename . "')</script>";
 	  return false;
 	}
   
 	if (fwrite($file, $content) === false) {
-	  echo "<script>console.error('Unable to write to file: " . $filename . "')</script>";
+	  //echo "<script>console.error('Unable to write to file: " . $filename . "')</script>";
 	  fclose($file);
 	  return false;
 	}
   
 	fclose($file);
-	echo "<script>console.log('Content written successfully to file: " . $filename . "')</script>";
+	//echo "<script>console.log('Content written successfully to file: " . $filename . "')</script>";
 	return true;
   }
   
@@ -362,14 +383,20 @@ function ADAPTIVECS()
 	if (is_scss_working()) {
 		// SCSS is working, do something
 		$message = "SCSS Compiler is initialized";
-		echo "<script>console.log('$message');</script>";
+		//echo "<script>console.log('$message');</script>";
 	
 		// Get SCSS file
 		$scss = new Compiler(); // Initialize the scssphp compiler
 		$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
 	
 		// Write the SCSS variables to file based on DB values
-		$options = get_option('adaptivecs_options');
+		$options = get_option('adaptivecs_options', array(
+			'bp_md' => 45,
+			'bp_lg' => 65,
+			'max_column_count_md' => 2,
+			'max_column_count_lg' => 4,
+			'gap' => 1.5
+		));
 		$bp_md = $options['bp_md'];
 		$bp_lg = $options['bp_lg'];
 		$max_column_count_md = $options['max_column_count_md'];
@@ -401,11 +428,11 @@ function ADAPTIVECS()
 		if (!file_exists($cssfile)) {
 			// There was an error writing the file
 			$message = 'Error writing CSS file';
-			echo "<script>console.log('$message');</script>";
+			//echo "<script>console.log('$message');</script>";
 		} else {
 			// The file was written successfully
 			$message = 'CSS file written successfully';
-			echo "<script>console.log('$message');</script>";
+			//echo "<script>console.log('$message');</script>";
 		}
 	} else {
 		// SCSS is not working, do something else
