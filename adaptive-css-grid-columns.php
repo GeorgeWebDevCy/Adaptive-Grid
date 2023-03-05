@@ -363,81 +363,59 @@ function ADAPTIVECS()
 		// SCSS is working, do something
 		$message = "SCSS Compiler is initialized";
 		echo "<script>console.log('$message');</script>";
-		//get scss file
-
+	
+		// Get SCSS file
 		$scss = new Compiler(); // Initialize the scssphp compiler
 		$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
-		//$scss->compileString('@import "style.scss";')->getCss();
-
-		// Write the CSS to the file
-		$cssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', 'w');
-		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss', 'w');
-		$scssfile = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss', 'r');
-
-
-		//$result = file_put_contents(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css', $scss);
-
+	
+		// Write the SCSS variables to file based on DB values
+		$options = get_option('adaptivecs_options');
+		$bp_md = $options['bp_md'];
+		$bp_lg = $options['bp_lg'];
+		$max_column_count_md = $options['max_column_count_md'];
+		$max_column_count_lg = $options['max_column_count_lg'];
+		$gap = $options['gap'];
+	
+		$scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap);
+	
+		$scss_variables_file = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
+		fwrite($scss_variables_file, $scss_variables);
+		fclose($scss_variables_file);
+	
+		// Combine SCSS files
+		$variables_file = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss';
+		$mike_style_file = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';
+		$style_file = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss';
+		$variables_content = file_get_contents($variables_file);
+		$mike_style_content = file_get_contents($mike_style_file);
+		$style_content = $variables_content . PHP_EOL . $mike_style_content;
+		file_put_contents($style_file, $style_content);
+	
+		// Compile SCSS files to CSS
+		$scssfile = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss';
+		$cssfile = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css';
+		$output = $scss->compile(file_get_contents($scssfile));
+		file_put_contents($cssfile, $output);
+	
 		// Check the result
-		if ($scssfile === false || $cssfile === false ) {
+		if (!file_exists($cssfile)) {
 			// There was an error writing the file
-
-			echo "<script>console.log('$message');</script>";
 			$message = 'Error writing CSS file';
 			echo "<script>console.log('$message');</script>";
 		} else {
 			// The file was written successfully
-			//get options 
-			$options = get_option('adaptivecs_options');
-			$scss = new Compiler(); // Initialize the scssphp compiler
-			$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
-			/* write vars to file based on db values*/
-		    $bp_md = $options['bp_md'];
-			$bp_lg = $options['bp_lg'];
-			$max_column_count_md = $options['max_column_count_md'];
-			$max_column_count_lg = $options['max_column_count_lg'];
-			$gap = $options['gap'];
-			
-			//fwrite($scssfile, $scss->compileString('@import "style.scss";')->getCss());
-			$s1 = sprintf('$bp-md: %sem;', $bp_md);
-			$s2 = sprintf('$bp-lg: %sem;', $bp_lg);
-		    $s3 = sprintf('$max-column-count-md: %s;', $max_column_count_md);
-			$s4 = sprintf('$max-column-count-lg: %s;', $max_column_count_lg);
-			$s5 = sprintf('$gap: %srem;', $gap);
-/* write vars to file based on db values*/
-$scssfilename = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss';
-$sourcefilename = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';			
-writeToFile($scssfilename, $s1);
-writeToFile($scssfilename, "\n");
-writeToFile($scssfilename, $s2);
-writeToFile($scssfilename, "\n");
-writeToFile($scssfilename, $s3);
-writeToFile($scssfilename, "\n");
-writeToFile($scssfilename, $s4);
-writeToFile($scssfilename, "\n");
-writeToFile($scssfilename, $s5);
-writeToFile($scssfilename, "\n");
-copyFileContents($sourcefilename,$scssfilename);
-//echo fwrite($cssfile, $scss->compileString('@import "mike-style.scss";')->getCss());
-			fclose($scssfile);
-			fclose($cssfile);
 			$message = 'CSS file written successfully';
 			echo "<script>console.log('$message');</script>";
-			echo "<script>console.log('$s1');</script>";
-			echo "<script>console.log('$s2');</script>";
-			echo "<script>console.log('$s3');</script>";
-			echo "<script>console.log('$s4');</script>";
-			echo "<script>console.log('$s5');</script>";
-
 		}
-
-
-
 	} else {
 		// SCSS is not working, do something else
 		$message = "SCSS is NOT working";
 		//echo "<script>console.log('$message');</script>";
 	}
-	return Adaptive_Css_Grid_Columns::instance();
+	
+	
+	
+		return Adaptive_Css_Grid_Columns::instance();
 }
 
 ADAPTIVECS();
