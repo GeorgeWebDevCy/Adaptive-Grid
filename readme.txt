@@ -1,4 +1,4 @@
-=== Adaptive CSS Grid Columns ===
+=== GM Adaptive CSS Grid Columns ===
 Author URI: https://www.georgenicolaou.me/
 Plugin URI: https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns
 Donate link: 
@@ -7,7 +7,7 @@ Tags:
 Requires at least: 
 Tested up to: 
 Requires PHP: 
-Stable tag: 1.0.0
+Stable tag: 1.0.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,10 +15,23 @@ Allows you to create Adaptive CSS Grid Columns
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+mportant Notice:
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+The plugin only works if you correctly identify and target the parent and it's direct child elements.
+Recommended page builder are Bricks, Oxygen and Breakdance.
+
+How to use:
+
+The setup is quite simple. Basically you just add two CSS classes to your elements
+and the plugin does the magic for you. Make sure to add fhe following clases to
+the container and direct child elements.
+
+Parent Element class: grid-container
+Child Element class: grid-items
+1. Define the maximum column count for your medium and large screen size.
+2. Add the desired gap size (in rem)
+3. Define the medium and large breakpoint (in em).
+
 
 A few notes about the sections above:
 
@@ -57,5 +70,13 @@ An answer to that question.
 
 == Changelog ==
 
-= 1.0.0: March 4, 2023 =
-* Birthday of Adaptive CSS Grid Columns
+= 1.0.0: March 2, 2023 =
+* Birthday of GM Adaptive CSS Grid Columns
+
+= 1.0.1: March 3, 2023 =
+* Minor text edits 
+
+
+= 1.0.2: March 6, 2023 =
+* Added text description to admin area of the GM Adaptive CSS Grid Columns Plugin
+* Implementation of Automic Updates from the plugin screeen 
