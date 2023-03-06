@@ -72,6 +72,9 @@ require_once ADAPTIVECS_PLUGIN_DIR . 'core/class-adaptive-css-grid-columns.php';
 require_once ADAPTIVECS_PLUGIN_DIR . 'vendor/autoload.php';
 require_once ADAPTIVECS_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
 
+require ADAPTIVECS_PLUGIN_DIR . 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
 use ScssPhp\ScssPhp\Compiler;
 
 // Register activation and deactivation hooks
@@ -496,7 +499,19 @@ function ADAPTIVECS()
 		//echo "<script>console.log('$message');</script>";
 	}
 	
+	//plugin updater start
+	$myUpdateChecker = PucFactory::buildUpdateChecker(
+		'https://github.com/GeorgeWebDevCy/Adaptive-Grid',
+		__FILE__,
+		'adaptive-css-grid-columns'
+	);
 	
+	//Set the branch that contains the stable release.
+	$myUpdateChecker->setBranch('main');
+	
+	//Optional: If you're using a private repository, specify the access token like this:
+	//$myUpdateChecker->setAuthentication('your-token-here');
+	//plugin updater end 
 	
 		return Adaptive_Css_Grid_Columns::instance();
 }
