@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:   Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns
- * Description:   Allows you to create Adaptive CSS Grid Columns
+ * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
  * Version:       1.0.0
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
@@ -101,9 +101,9 @@ function adaptivecs_deactivate() {
 function adaptivecs_options_page()
 {
 	add_menu_page(
-		'Adaptive CSS Grid Columns Options',
+		'GM Adaptive CSS Grid Columns',
 		// Page title
-		'ACGC Options',
+		'GM Grid',
 		// Menu title
 		'manage_options',
 		// Capability required to access the menu
@@ -120,8 +120,64 @@ add_action('admin_menu', 'adaptivecs_options_page');
 function adaptivecs_options_page_content()
 {
 	?>
+	<div class ="wrap">
+	<div>
+    <h2><strong>Important Notice:</strong></h2>
+</div>
+<div>
+    <br/>
+</div>
+<div>
+The plugin only works if you correctly identify  and target the parent and it's direct child elements.
+</div>
+<div>
+    Recommended page builder are Bricks, Oxygen and Breakdance.
+</div>
+<div>
+    <br/>
+</div>
+<div>
+<h2><strong>How to use:</strong></div></h2>
+<div>
+    <br/>
+</div>
+<div>
+    The setup is quite simple. Basically you just add two CSS classes to your
+    elements
+</div>
+<div>
+    and the plugin does the magic for you. Make sure to add fhe following
+    clases to
+</div>
+<div>
+    the container and direct child elements.
+</div>
+<div>
+    <br/>
+</div>
+<div>
+    <strong>Parent Element class:</strong>
+    grid-container
+</div>
+<div>
+    <strong>Child Element class:</strong>
+    grid-items
+</div>
+
+<div>
+    1. Define the maximum column count for your medium and large screen size.</br>
+	2. Add the desired gap size (in rem)</br>
+	3. Define the medium and large breakpoint (in em).
+</div>
+<div>
+    <br/>
+</div>
+<div>
+    <br/>
+</div>
+	</div>
 	<div class="wrap">
-		<h1>Adaptive CSS Grid Columns Options</h1>
+		<h1>GM Adaptive CSS Grid Columns</h1>
 		<form method="post" action="options.php">
 			<?php settings_fields('adaptivecs_options_group'); ?>
 			<?php do_settings_sections('adaptivecs_options'); ?>
