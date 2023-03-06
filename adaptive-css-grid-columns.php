@@ -447,6 +447,7 @@ function ADAPTIVECS()
 		// Get SCSS file
 		$scss = new Compiler(); // Initialize the scssphp compiler
 		$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
+		$scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED); //output css to as minified
 	
 		// Write the SCSS variables to file based on DB values
 		$options = get_option('adaptivecs_options', array(
