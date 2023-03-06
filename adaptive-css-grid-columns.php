@@ -5,7 +5,7 @@
  * @package       ADAPTIVECS
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.2
+ * @version       1.0.3
  *
  * @wordpress-plugin
  * Plugin Name:   Adaptive CSS Grid Columns
@@ -48,7 +48,7 @@ if (!defined('ABSPATH'))
 define('ADAPTIVECS_NAME', 'Adaptive CSS Grid Columns');
 
 // Plugin version
-define('ADAPTIVECS_VERSION', '1.0.2');
+define('ADAPTIVECS_VERSION', '1.0.3');
 
 // Plugin Root File
 define('ADAPTIVECS_PLUGIN_FILE', __FILE__);
