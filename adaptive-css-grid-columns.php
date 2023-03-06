@@ -11,7 +11,7 @@
  * Plugin Name:   Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.0
+ * Version:       1.0.1
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   adaptive-css-grid-columns
