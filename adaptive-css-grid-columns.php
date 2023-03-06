@@ -5,7 +5,7 @@
  * @package       ADAPTIVECS
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.0
+ * @version       1.0.1
  *
  * @wordpress-plugin
  * Plugin Name:   Adaptive CSS Grid Columns
