@@ -80,3 +80,14 @@ An answer to that question.
 = 1.0.2: March 6, 2023 =
 * Added text description to admin area of the GM Adaptive CSS Grid Columns Plugin
 * Implementation of Automic Updates from the plugin screeen 
+
+= 1.0.3: March 6, 2023 =
+* Updater fix
+
+= 1.0.5: March 6, 2023 =
+* Set generated CSS file to minified
+
+
+
+
+output css to as minified
