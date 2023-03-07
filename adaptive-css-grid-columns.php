@@ -500,25 +500,6 @@ function ADAPTIVECS()
 		//echo "<script>console.log('$message');</script>";
 	}
 	
-	//plugin updater start
-	$myUpdateChecker = PucFactory::buildUpdateChecker(
-		'https://github.com/GeorgeWebDevCy/Adaptive-Grid',
-		__FILE__,
-		'adaptive-css-grid-columns'
-	);
-	
-	//Set the branch that contains the stable release.
-	$myUpdateChecker->setBranch('main');
-	
-	//Optional: If you're using a private repository, specify the access token like this:
-	//$myUpdateChecker->setAuthentication('your-token-here');
-	//plugin updater end 
-
-
-	//version check start
-	
-	//version check end
-	
 		return Adaptive_Css_Grid_Columns::instance();
 }
 
