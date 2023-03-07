@@ -429,40 +429,6 @@ function copyFileContents($sourceFile, $destFile) {
 	}
   }
   
-  function gm_adapive_grid_check_for_updates() {
-    // Include the plugin-update-checker library
-    require_once plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
-
-    // Create a new instance of the update checker for GitHub
-    $m$myUpdateChecker = PucFactory::buildUpdateChecker(
-        'https://github.com/GeorgeWebDevCy/Adaptive-Grid',
-        __FILE__,
-        'adaptive-css-grid-columns'
-    );
-    
-    //Set the branch that contains the stable release.
-    $myUpdateChecker->setBranch('main');
-
-    // Get the current version of the plugin
-    $current_version = get_option( 'adaptivecs_version' );
-
-    // Get the latest version of the plugin from GitHub
-    $latest_version = $myUpdateChecker->getLatestVersion();
-
-    // Compare the current version with the latest version
-    if ( version_compare( $current_version, $latest_version, '>=' ) ) {
-        // The latest version is already installed
-        add_filter( 'install_plugin_complete_actions', function( $actions, $plugin ) {
-            // Modify the "Install Now" button text to say "Latest Version Already Installed"
-            $actions['activate'] = '<b>Latest Version Already Installed</b>';
-            return $actions;
-        }, 10, 2 );
-    } else {
-        // An update is available, store the latest version in the options table
-        update_option( 'adaptivecs_version', $latest_version );
-    }
-}
-
 /**
  * The main function to load the only instance
  * of our master class.
@@ -544,8 +510,14 @@ function ADAPTIVECS()
 	//Set the branch that contains the stable release.
 	$myUpdateChecker->setBranch('main');
 	
+	//Optional: If you're using a private repository, specify the access token like this:
+	//$myUpdateChecker->setAuthentication('your-token-here');
+	//plugin updater end 
 
 
+	//version check start
+	
+	//version check end
 	
 		return Adaptive_Css_Grid_Columns::instance();
 }
