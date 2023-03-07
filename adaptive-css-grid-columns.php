@@ -544,15 +544,6 @@ function ADAPTIVECS()
 	//Set the branch that contains the stable release.
 	$myUpdateChecker->setBranch('main');
 	
-	
-/**
- * Check for updates using the plugin-update-checker library.
- */
-
-// Call the update checker function on plugin load
-add_action( 'plugins_loaded', 'gm_adapive_grid_check_for_updates' );
-
-
 
 
 	
