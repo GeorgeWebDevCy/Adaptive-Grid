@@ -15,7 +15,7 @@ Allows you to create Adaptive CSS Grid Columns
 
 == Description ==
 
-mportant Notice:
+Important Notice:
 
 The plugin only works if you correctly identify and target the parent and it's direct child elements.
 Recommended page builder are Bricks, Oxygen and Breakdance.
