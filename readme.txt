@@ -86,8 +86,3 @@ An answer to that question.
 
 = 1.0.5: March 6, 2023 =
 * Set generated CSS file to minified
-
-
-
-
-output css to as minified
