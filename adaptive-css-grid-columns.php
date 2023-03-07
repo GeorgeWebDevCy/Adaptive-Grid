@@ -48,7 +48,7 @@ if (!defined('ABSPATH'))
 define('ADAPTIVECS_NAME', 'GM Adaptive CSS Grid Columns');
 
 // Plugin version
-define('ADAPTIVECS_VERSION', '1.0.4');
+define('ADAPTIVECS_VERSION', '1.0.5');
 
 // Plugin Root File
 define('ADAPTIVECS_PLUGIN_FILE', __FILE__);
@@ -513,6 +513,11 @@ function ADAPTIVECS()
 	//Optional: If you're using a private repository, specify the access token like this:
 	//$myUpdateChecker->setAuthentication('your-token-here');
 	//plugin updater end 
+
+
+	//version check start
+	
+	//version check end
 	
 		return Adaptive_Css_Grid_Columns::instance();
 }
