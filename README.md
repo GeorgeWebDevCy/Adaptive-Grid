@@ -1,3 +1,1 @@
 # Adaptive-Grid
-
-Mike test
