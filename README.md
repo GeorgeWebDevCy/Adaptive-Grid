@@ -4,9 +4,9 @@
 
 This mini plugin helps you to create fast and easy grid layouts with CSS. The plugin is lightweight and won't affect your pagespeed.
 
-Set your values for the max column count, gap size and use default or own breakpoint sizes and the magic happens in the background. You start by setting a maximum column count for a medium breakpoint, and large breakpoint. It's easy to match your existing breakpoints, just add the width in **em**.
+Set your values for the max column count, gap size and use default or your own breakpoint sizes and the magic happens in the background. You start by setting a maximum column count for a medium breakpoint, and large breakpoint. It's easy to match your existing breakpoints, just add the width in **em**.
 
-You don't know how to convert pixel into the em unit? Then take a look at this example: 1200px / 16px = 75em. (Parent width in pixel divided by 16px equals XXem).
+You don't know how to convert pixel into the em unit? Then take a look at this example: 1200px / 16px = 75em. (Parent width in pixels divided by 16px equals XXem).
 
 ### How to use
 
