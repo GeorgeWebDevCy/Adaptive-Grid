@@ -13,6 +13,6 @@ You don't know how to convert pixel into the em unit? Then take a look at this e
 To get this grid onto your website all you have to do is to apply a CSS class to your parent element. Usually the parent element is a **wrapper** or **container** element like a **section** or **div**. The parent must have direct children to work, otherwise the plugin can't do it's magic.
 
 Parent Element Class: **grid-container**
-Child's Element Class: **grid-items**
+Child's Element Class: **grid-item**
 
 **Important notice:** At the moment this plugin only works with Bricks, Oxygen and Breakdance pagebuilder. Or inside of a custom project where you can define HTML-Elements very precisely.

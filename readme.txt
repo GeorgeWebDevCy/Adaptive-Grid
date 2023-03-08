@@ -86,3 +86,6 @@ An answer to that question.
 
 = 1.0.5: March 6, 2023 =
 * Set generated CSS file to minified
+
+= 1.0.5.1: March 8, 2023 =
+* Fixed Container not set to grid by default Issue #4 (Reported by Imran Siddiq)
