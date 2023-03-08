@@ -435,7 +435,7 @@ function ADAPTIVECS()
 		// Compile SCSS files to CSS
 		$scssfile = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.scss';
 		$cssfile = ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/style.css';
-		$output = $scss->compile(file_get_contents($scssfile));
+		$output = $scss->compileString(file_get_contents($scssfile))->getCss();
 		file_put_contents($cssfile, $output);
 	
 		// Check the result

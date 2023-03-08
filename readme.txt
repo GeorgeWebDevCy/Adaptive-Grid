@@ -91,4 +91,5 @@ An answer to that question.
 * Fixed Container not set to grid by default Issue #4 (Reported by Imran Siddiq)
 
 = 1.0.5.2: March 8, 2023 =
-Removed unused functions to clean up code
+* Removed unused functions to clean up code
+* Removed depricated compile refrences and used new $compiler->compileString
