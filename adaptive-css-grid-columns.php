@@ -164,7 +164,7 @@ The plugin only works if you correctly identify  and target the parent and it's 
 </div>
 <div>
     <strong>Child Element class:</strong>
-    grid-items
+    grid-item
 </div>
 
 <div>
