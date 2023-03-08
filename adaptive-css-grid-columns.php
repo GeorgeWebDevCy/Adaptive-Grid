@@ -5,13 +5,13 @@
  * @package       ADAPTIVECS
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.5.1
+ * @version       1.0.5.2
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.5.1
+ * Version:       1.0.5.2
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   adaptive-css-grid-columns
@@ -48,7 +48,7 @@ if (!defined('ABSPATH'))
 define('ADAPTIVECS_NAME', 'GM Adaptive CSS Grid Columns');
 
 // Plugin version
-define('ADAPTIVECS_VERSION', '1.0.5.1');
+define('ADAPTIVECS_VERSION', '1.0.5.2');
 
 // Plugin Root File
 define('ADAPTIVECS_PLUGIN_FILE', __FILE__);
@@ -382,53 +382,7 @@ function is_scss_working()
 
 	return true; // If the SCSS code was successfully compiled, return true
 }
-function writeToFile($filename, $content) {
-	if (!file_exists($filename)) {
-	  //echo "<script>console.error('File not found: " . $filename . "')</script>";
-	  return false;
-	}
-	
-	if (!is_writable($filename)) {
-	  //echo "<script>console.error('File is not writable: " . $filename . "')</script>";
-	  return false;
-	}
-  
-	$file = fopen($filename, "a");
-	if ($file === false) {
-	  //echo "<script>console.error('Unable to open file for writing: " . $filename . "')</script>";
-	  return false;
-	}
-  
-	if (fwrite($file, $content) === false) {
-	  //echo "<script>console.error('Unable to write to file: " . $filename . "')</script>";
-	  fclose($file);
-	  return false;
-	}
-  
-	fclose($file);
-	//echo "<script>console.log('Content written successfully to file: " . $filename . "')</script>";
-	return true;
-  }
-  
-  
-function copyFileContents($sourceFile, $destFile) {
-	$sourceHandle = fopen($sourceFile, "r");
-	$destHandle = fopen($destFile, "w");
-  
-	if ($sourceHandle && $destHandle) {
-	  while (!feof($sourceHandle)) {
-		$buffer = fread($sourceHandle, 4096);
-		fwrite($destHandle, $buffer);
-	  }
-  
-	  fclose($sourceHandle);
-	  fclose($destHandle);
-	  return true;
-	} else {
-	  return false;
-	}
-  }
-  
+
 /**
  * The main function to load the only instance
  * of our master class.

@@ -89,3 +89,6 @@ An answer to that question.
 
 = 1.0.5.1: March 8, 2023 =
 * Fixed Container not set to grid by default Issue #4 (Reported by Imran Siddiq)
+
+= 1.0.5.2: March 8, 2023 =
+Remove unused functions to clean up code
