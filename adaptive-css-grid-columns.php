@@ -272,6 +272,18 @@ function adaptivecs_register_options()
 		'adaptivecs_section' // Section ID
 	);
 
+	add_settings_field(
+		'scss_output_style',
+		// Field ID
+		'Minify CSS Output  (Default=Yes)',
+		// Field label
+		'scss_output_style_callback',
+		// Callback function to render the field
+		'adaptivecs_options',
+		// Page slug
+		'adaptivecs_section' // Section ID
+	);
+
 }
 add_action('admin_init', 'adaptivecs_register_options');
 
@@ -284,6 +296,7 @@ function adaptivecs_options_sanitize($options)
 	$sanitized_options['gap'] = ($options['gap']);
 	$sanitized_options['bp_md'] = ($options['bp_md']);
 	$sanitized_options['bp_lg'] = ($options['bp_lg']);
+	$sanitized_options['scss_output_style'] = ($options['scss_output_style']);
 
 	return $sanitized_options;
 }
@@ -326,6 +339,15 @@ function adaptivecs_bp_lg_callback()
 	$options = get_option('adaptivecs_options');
 	echo '<input type="number" name="adaptivecs_options[bp_lg]" step="0.1" value="' . $options['bp_lg'] . '" />';
 }
+
+// Render the scss_output_style field
+function scss_output_style_callback()
+{
+	$options = get_option('adaptivecs_options');
+	$checked = isset($options['scss_output_style']) && $options['scss_output_style'] === 'Yes' ? 'checked="checked"' : '';
+	echo '<input type="checkbox" name="adaptivecs_options[scss_output_style]" value="Yes" ' . $checked . '/>';
+}
+
 
 function enqueue_my_styles()
 {
@@ -401,7 +423,9 @@ function ADAPTIVECS()
 		// Get SCSS file
 		$scss = new Compiler(); // Initialize the scssphp compiler
 		$scss->setImportPaths(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/');
-		$scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED); //output css to as minified
+		//$scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED); //output css to as minified
+		// Get the option value from the database for the scss output style
+	
 	
 		// Write the SCSS variables to file based on DB values
 		$options = get_option('adaptivecs_options', array(
@@ -409,14 +433,21 @@ function ADAPTIVECS()
 			'bp_lg' => 65,
 			'max_column_count_md' => 2,
 			'max_column_count_lg' => 4,
-			'gap' => 1.5
+			'gap' => 1.5,
+			'scss_output_style' => 'Yes'
 		));
 		$bp_md = $options['bp_md'];
 		$bp_lg = $options['bp_lg'];
 		$max_column_count_md = $options['max_column_count_md'];
 		$max_column_count_lg = $options['max_column_count_lg'];
 		$gap = $options['gap'];
-	
+		$scss_output_style = $options['scss_output_style'];
+		// Set the output style based on the option value
+if ($scss_output_style === 'Yes') {
+    $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED);
+} else {
+    $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
+}
 		$scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap);
 	
 		$scss_variables_file = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
