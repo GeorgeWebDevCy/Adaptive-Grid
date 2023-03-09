@@ -89,7 +89,9 @@ function adaptivecs_activate() {
         'bp_lg' => 65,
         'max_column_count_md' => 2,
         'max_column_count_lg' => 4,
-        'gap' => 1.5
+        'gap' => 1.5,
+        'auto_min_column' => 20
+        
     );
     add_option( 'adaptivecs_options', $options );
 }
@@ -276,6 +278,19 @@ function adaptivecs_register_options()
         'adaptivecs_section' // Section ID
     );
 
+    add_settings_field(
+        'auto_min_column',
+        // Field ID
+        __('Minimum width for auto-grid (in rem)', 'adaptive-css-grid-columns'),
+        // Field label
+        'adaptivecs_auto_min_column_callback',
+        // Callback function to render the field
+        'adaptivecs_options',
+        // Page slug
+        'adaptivecs_section' // Section ID
+    );
+
+
 }
 add_action('admin_init', 'adaptivecs_register_options');
 
@@ -289,6 +304,7 @@ function adaptivecs_options_sanitize($options)
     $sanitized_options['bp_md'] = ($options['bp_md']);
     $sanitized_options['bp_lg'] = ($options['bp_lg']);
     $sanitized_options['scss_output_style'] = ($options['scss_output_style']);
+    $sanitized_options['auto_min_column'] = ($options['auto_min_column']);
 
     return $sanitized_options;
 }
@@ -331,6 +347,14 @@ function adaptivecs_bp_lg_callback()
 	$options = get_option('adaptivecs_options');
 	echo '<input type="number" name="adaptivecs_options[bp_lg]" step="0.1" value="' . $options['bp_lg'] . '" />';
 }
+
+function adaptivecs_auto_min_column_callback()
+{
+	$options = get_option('adaptivecs_options');
+	echo '<input type="number" name="adaptivecs_options[auto_min_column]" step="0.1" value="' . $options['auto_min_column'] . '" />';
+}
+
+
 
 // Render the scss_output_style field
 function scss_output_style_callback()
@@ -422,7 +446,8 @@ function ADAPTIVECS()
             'max_column_count_md' => 2,
             'max_column_count_lg' => 4,
             'gap' => 1.5,
-            'scss_output_style' => 'Yes'
+            'scss_output_style' => 'Yes',
+            'auto_min_column' => 20
         ));
         $bp_md = $options['bp_md'];
         $bp_lg = $options['bp_lg'];
@@ -430,13 +455,16 @@ function ADAPTIVECS()
         $max_column_count_lg = $options['max_column_count_lg'];
         $gap = $options['gap'];
         $scss_output_style = $options['scss_output_style'];
+        $auto_min_column = $options['auto_min_column'];
+        
+
         // Set the output style based on the option value
         if ($scss_output_style === 'Yes') {
             $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED);
         } else {
             $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         }
-        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap);
+        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL '$auto-min-column: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap,$auto_min_column);
 
         $scss_variables_file = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
         fwrite($scss_variables_file, $scss_variables);
