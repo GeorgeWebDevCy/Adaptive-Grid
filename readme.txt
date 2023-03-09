@@ -93,3 +93,7 @@ An answer to that question.
 = 1.0.5.2: March 8, 2023 =
 * Removed unused functions to clean up code
 * Removed depricated compile refrences and used new $compiler->compileString
+
+= 1.0.5.3: March 9, 2023 =
+* Added translation Greek
+* Added more grid options
