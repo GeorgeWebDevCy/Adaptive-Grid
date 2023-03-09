@@ -458,6 +458,15 @@ function ADAPTIVECS()
         $gap = isset($options['gap']) ? $options['gap'] : 1.5;
         $scss_output_style = isset($options['scss_output_style']) ? $options['scss_output_style'] : 'Yes';
         $auto_min_column = isset($options['auto_min_column']) ? $options['auto_min_column'] : 20;
+        
+        // Set default values if keys are not set
+        $bp_md = isset($options['bp_md']) ? $options['bp_md'] : 45;
+        $bp_lg = isset($options['bp_lg']) ? $options['bp_lg'] : 65;
+        $max_column_count_md = isset($options['max_column_count_md']) ? $options['max_column_count_md'] : 2;
+        $max_column_count_lg = isset($options['max_column_count_lg']) ? $options['max_column_count_lg'] : 4;
+        $gap = isset($options['gap']) ? $options['gap'] : 1.5;
+        $scss_output_style = isset($options['scss_output_style']) ? $options['scss_output_style'] : 'Yes';
+        $auto_min_column = isset($options['auto_min_column']) ? $options['auto_min_column'] : 20;
          
 
         // Set the output style based on the option value
