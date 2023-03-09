@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-03-09 13:08+0200\n"
+"PO-Revision-Date: 2023-03-09 13:15+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;__e;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: adaptive-css-grid-columns.php:107 adaptive-css-grid-columns.php:175
+msgid "GM Adaptive CSS Grid Columns"
+msgstr "GM Adaptive CSS Grid Columns"
+
+#: adaptive-css-grid-columns.php:109
+msgid "GM Grid"
+msgstr "GM Grid"
+
+#: adaptive-css-grid-columns.php:128
+msgid "Important Notice:"
+msgstr "Σημαντική σημείωση:"
+
+#: adaptive-css-grid-columns.php:134
+msgid ""
+"The plugin only works if you correctly identify and target the parent and "
+"its direct child elements."
+msgstr ""
+"Το πρόσθετο λειτουργεί μόνο εάν προσδιορίσετε και στοχεύσετε σωστά τον "
+"γονέα και τα άμεσα θυγατρικά του στοιχεία."
+
+#: adaptive-css-grid-columns.php:137
+msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
+msgstr ""
+"Συνιστώμενες εφαρμογές δημιουργίας σελίδων είναι τα Bricks, Oxygen και "
+"Breakdance."
+
+#: adaptive-css-grid-columns.php:143
+msgid "How to use:"
+msgstr "Πώς να το χρησιμοποιήσετε:"
+
+#: adaptive-css-grid-columns.php:149
+msgid ""
+"The setup is quite simple. Basically, you just add two CSS classes to your "
+"elements and the plugin does the magic for you. Make sure to add the "
+"following classes to the container and direct child elements."
+msgstr ""
+"Η ρύθμιση είναι αρκετά απλή. Βασικά, απλά προσθέτετε δύο κλάσεις CSS στα "
+"στοιχεία σας και το πρόσθετο κάνει τα μαγικά για εσάς. Φροντίστε να "
+"προσθέσετε τις ακόλουθες κλάσεις στο container και να κατευθύνετε θυγατρικά "
+"στοιχεία."
+
+#: adaptive-css-grid-columns.php:155
+msgid "Parent Element class:"
+msgstr "Κλάση γονικού στοιχείου:"
+
+#: adaptive-css-grid-columns.php:159
+msgid "Child Element class:"
+msgstr "Κλάση θυγατρικού στοιχείου:"
+
+#: adaptive-css-grid-columns.php:163
+msgid "Define the maximum column count for your medium and large screen size."
+msgstr "Εισαγάγετε το μέγιστο αριθμό στηλών για διαφορετικά μεγέθη οθόνης."
+
+#: adaptive-css-grid-columns.php:164
+msgid "Add the desired gap size (in rem)."
+msgstr "Προσθέστε το επιθυμητό μέγεθος κενού (σε ρεμ)."
+
+#: adaptive-css-grid-columns.php:165
+msgid "Define the medium and large breakpoint (in em)."
+msgstr "Μεσαίο Breakpoint  (σε rem)"
+
+#: adaptive-css-grid-columns.php:199
+msgid "Max Column Counts"
+msgstr "Μέγιστος Αριθμός Στηλών"
+
+#: adaptive-css-grid-columns.php:209
+msgid "Max Column Count (medium)"
+msgstr "Μέγιστος Αριθμός Στηλών (μεσαίο)"
+
+#: adaptive-css-grid-columns.php:221
+msgid "Max Column Count (large)"
+msgstr "Μέγιστος αριθμός στηλών (μεγάλο)"
+
+#: adaptive-css-grid-columns.php:233
+msgid "Gap (in rem)"
+msgstr "Κένο (σε rem)"
+
+#: adaptive-css-grid-columns.php:245
+msgid "Medium Breakpoint (in rem)"
+msgstr "Μεσαίο Breakpoint  (σε rem)"
+
+#: adaptive-css-grid-columns.php:258
+msgid "Large Breakpoint (in rem)"
+msgstr "Μεγάλο Breakpoint  (σε rem)"
+
+#: adaptive-css-grid-columns.php:270
+msgid "Minify CSS Output  (Default=Yes)"
+msgstr "Ελαχιστοποίηση εξόδου CSS (Προεπιλογή=Ναι)"
+
+#: adaptive-css-grid-columns.php:299
+msgid "Enter the max column counts for different screen sizes."
+msgstr "Εισαγάγετε το μέγιστο αριθμό στηλών για διαφορετικά μεγέθη οθόνης."
+
+#: adaptive-css-grid-columns.php:353 adaptive-css-grid-columns.php:354
+msgid "1"
+msgstr "1"
+
+#: adaptive-css-grid-columns.php:407
+msgid "SCSS Compiler is initialized"
+msgstr "Ο μεταγλωττιστής SCSS έχει αρχικοποιηθεί"
+
+#: adaptive-css-grid-columns.php:462
+msgid "Error writing CSS file"
+msgstr "Σφάλμα κατά την εγγραφή του αρχείου CSS"
+
+#: adaptive-css-grid-columns.php:466
+msgid "CSS file written successfully"
+msgstr "Το αρχείο CSS γράφτηκε με επιτυχία"
+
+#: adaptive-css-grid-columns.php:471
+msgid "SCSS is NOT working"
+msgstr "Το SCSS ΔΕΝ λειτουργεί"
+
+#: core/class-adaptive-css-grid-columns.php:70
+msgid "You are not allowed to clone this class."
+msgstr "Δεν επιτρέπεται να κλωνοποιήσετε αυτήν την κλάση."
+
+#: core/class-adaptive-css-grid-columns.php:81
+msgid "You are not allowed to unserialize this class."
+msgstr "Δεν επιτρέπεται να καταργήσετε σειριακά αυτήν την κλάση."
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
+msgid "View details"
+msgstr "Δείτε λεπτομέρειες"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
+#, php-format
+msgid "More information about %s"
+msgstr "Περισσότερες πληροφορίες για το %s"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
+msgid "Check for updates"
+msgstr "Ελεγχος για ενημερώσεις"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Άγνωστη κατάσταση συστήματος ελέγχου ενημέρωσης \"%s\""
+
+#: plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Δεν υπάρχει διαθέσιμο αρχείο καταγραφής αλλαγών."
