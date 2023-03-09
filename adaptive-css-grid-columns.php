@@ -505,7 +505,7 @@ function ADAPTIVECS()
 	
 	//plugin updater start
 	$myUpdateChecker = PucFactory::buildUpdateChecker(
-		'https://github.com/GeorgeWebDevCy/Adaptive-Grid',
+		'https://github.com/GeorgeWebDevCy/adaptive-css-grid-columns',
 		__FILE__,
 		'adaptive-css-grid-columns'
 	);
