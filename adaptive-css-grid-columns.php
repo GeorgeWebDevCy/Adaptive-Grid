@@ -402,6 +402,7 @@ function is_scss_working() {
  */
 function ADAPTIVECS()
 {
+    //add_action( 'plugins_loaded', 'load_plugin_textdomain' );
     if (is_scss_working()) {
         // SCSS is working, do something
         $message = __("SCSS Compiler is initialized", "adaptive-css-grid-columns");

@@ -149,6 +149,7 @@ if ( ! class_exists( 'Adaptive_Css_Grid_Columns' ) ) :
 			load_plugin_textdomain( 'adaptive-css-grid-columns', FALSE, dirname( plugin_basename( ADAPTIVECS_PLUGIN_FILE ) ) . '/languages/' );
 		}
 
+
 	}
 
 endif; // End if class_exists check.
