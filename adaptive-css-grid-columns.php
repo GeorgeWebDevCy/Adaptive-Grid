@@ -464,7 +464,7 @@ function ADAPTIVECS()
         } else {
             $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         }
-        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL '$auto-min-column: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap,$auto_min_column);
+        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL . '$auto-min-column: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap,$auto_min_column);
 
         $scss_variables_file = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
         fwrite($scss_variables_file, $scss_variables);
