@@ -1,46 +1,58 @@
 $bp-md: 45em;
 $bp-lg: 65em;
-$max-column-count-md: 6;
-$max-column-count-lg: 3;
+$max-column-count-md: 2;
+$max-column-count-lg: 4;
 $gap: 1.5rem;
-//@import url("../reset.css");
-// Everything below these break points width stacks
-//$bp-md: 45em;
-//$bp-lg: 75em;
-// Define max. columns
-//$max-column-count-md: 2;
-//$max-column-count-lg: 8;
-// gap between items
-//$gap: 1.5rem;
-// for demo only
-// Setting colors in HSL
-$h: 200;
-$s: 100%;
-$l: 10%;
-
 .grid-container {
-	text-align: center;
-	margin: 1rem;
-
 	display: grid !important;
 	gap: $gap;
-	/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
-	/* grid-auto-flow: column; */
 }
 
-.grid-item {
-	color: #f0f0f0;
-	font-weight: bold;
-	font-family: sans-serif;
-	padding-block: 1em;
+// .grid-item {
+// 	outline: 1px solid blue;
+// }
+
+.grid-container.cluster {
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: $gap;
+	// outline: 1px solid pink !important;
 }
 
-@for $j from 1 through 15 {
-	.grid-item:nth-child(#{$max-column-count-md}n + #{$j}) {
-		background: hsl($h, $s, $l + ($j * 5) + 5);
-		// color: hsl(0, 0%, 100% - ($j * 5) - 10);
-		text-shadow: 0 1px 1px hsl(0, 0%, 30% - ($j * 3) + 3);
-	}
+.grid-container.auto-grid {
+	// --min-column-size: 20rem;
+	// Sass variable from input instead
+	display: grid !important;
+	gap: $gap;
+	grid-template-columns: repeat(auto-fit, minmax(min($auto-min-column, 100%), 1fr));
+	// outline: 2px solid rebeccapurple !important;
+}
+
+.grid-container.flexible-grid {
+	display: flex !important;
+	flex-wrap: wrap;
+	gap: $gap;
+	// outline: 1px solid firebrick !important;
+}
+
+.grid-container.flexible-grid > * {
+	flex: 1;
+}
+
+.grid-container.reel {
+	// --gap: 1rem;
+	display: grid !important;
+	gap: $gap;
+	grid-auto-flow: column;
+	grid-auto-columns: calc(50% - ($gap / 2));
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-padding: $gap;
+	// outline: 1px solid orangered !important;
+}
+
+.grid-container.reel > * {
+	scroll-snap-align: start;
 }
 
 @media (min-width: $bp-md) {
@@ -49,7 +61,7 @@ $l: 10%;
 	}
 
 	@for $i from 1 through $max-column-count-md {
-		.grid-item:nth-child(#{$max-column-count-md}n + #{$i}) {
+		.grid-container > .grid-item:nth-child(#{$max-column-count-md}n + #{$i}) {
 			grid-column: $i;
 		}
 	}
@@ -57,7 +69,7 @@ $l: 10%;
 
 @media (min-width: $bp-lg) {
 	@for $f from 1 through $max-column-count-lg {
-		.grid-item:nth-child(#{$max-column-count-lg}n + #{$f}) {
+		.grid-container > .grid-item:nth-child(#{$max-column-count-lg}n + #{$f}) {
 			grid-column: $f;
 		}
 	}
