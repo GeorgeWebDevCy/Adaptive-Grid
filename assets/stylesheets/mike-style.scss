@@ -39,7 +39,7 @@
 	display: grid !important;
 	gap: $gap;
 	grid-auto-flow: column;
-	grid-auto-columns: calc(50% - ($gap / 2));
+	grid-auto-columns: calc(50% - (#{$gap} / 2));
 	overflow-x: scroll;
 	scroll-snap-type: x mandatory;
 	scroll-padding: $gap;
