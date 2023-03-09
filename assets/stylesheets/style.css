@@ -1,0 +1,59 @@
+.grid-container {
+  display: grid !important;
+  gap: 1.5rem;
+}
+.grid-container.cluster {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.grid-container.auto-grid {
+  display: grid !important;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(rem, 100%), 1fr));
+}
+.grid-container.flexible-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.grid-container.flexible-grid > * {
+  flex: 1;
+}
+.grid-container.reel {
+  display: grid !important;
+  gap: 1.5rem;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(50% - ($gap / 2));
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1.5rem;
+}
+.grid-container.reel > * {
+  scroll-snap-align: start;
+}
+@media (min-width: 45em) {
+  .grid-container {
+    grid-auto-flow: column;
+  }
+  .grid-container > .grid-item:nth-child(2n + 1) {
+    grid-column: 1;
+  }
+  .grid-container > .grid-item:nth-child(2n + 2) {
+    grid-column: 2;
+  }
+}
+@media (min-width: 65em) {
+  .grid-container > .grid-item:nth-child(4n + 1) {
+    grid-column: 1;
+  }
+  .grid-container > .grid-item:nth-child(4n + 2) {
+    grid-column: 2;
+  }
+  .grid-container > .grid-item:nth-child(4n + 3) {
+    grid-column: 3;
+  }
+  .grid-container > .grid-item:nth-child(4n + 4) {
+    grid-column: 4;
+  }
+}
