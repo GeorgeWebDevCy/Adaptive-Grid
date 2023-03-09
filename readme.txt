@@ -97,3 +97,6 @@ An answer to that question.
 = 1.0.5.3: March 9, 2023 =
 * Added translation Greek
 * Added more grid options
+
+= 1.0.5.4: March 9, 2023 =
+* Fixing new grid settings
