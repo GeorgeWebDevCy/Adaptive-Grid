@@ -5,13 +5,13 @@
  * @package       ADAPTIVECS
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.5.5
+ * @version       1.0.5.2
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.5.5
+ * Version:       1.0.5.2
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   adaptive-css-grid-columns
@@ -48,7 +48,7 @@ if (!defined('ABSPATH'))
 define('ADAPTIVECS_NAME', 'GM Adaptive CSS Grid Columns');
 
 // Plugin version
-define('ADAPTIVECS_VERSION', '1.0.5.5');
+define('ADAPTIVECS_VERSION', '1.0.5.2');
 
 // Plugin Root File
 define('ADAPTIVECS_PLUGIN_FILE', __FILE__);
@@ -90,8 +90,7 @@ function adaptivecs_activate() {
         'max_column_count_md' => 2,
         'max_column_count_lg' => 4,
         'gap' => 1.5,
-        'max_width' => 87.5,
-        'hspace' => 2
+        'auto_min_column' => 20
         
     );
     add_option( 'adaptivecs_options', $options );
@@ -280,28 +279,18 @@ function adaptivecs_register_options()
     );
 
     add_settings_field(
-        'max_width',
+        'auto_min_column',
         // Field ID
-        __('Maximum width for centered grid (in rem)', 'adaptive-css-grid-columns'),
+        __('Minimum width for auto-grid (in rem)', 'adaptive-css-grid-columns'),
         // Field label
-        'adaptivecs_max_width_callback',
+        'adaptivecs_auto_min_column_callback',
         // Callback function to render the field
         'adaptivecs_options',
         // Page slug
         'adaptivecs_section' // Section ID
     );
 
-    add_settings_field(
-        'hspace',
-        // Field ID
-        __('Horizontal left and right spacing (in rem)', 'adaptive-css-grid-columns'),
-        // Field label
-        'adaptivecs_hspace_callback',
-        // Callback function to render the field
-        'adaptivecs_options',
-        // Page slug
-        'adaptivecs_section' // Section ID
-    );
+
 }
 add_action('admin_init', 'adaptivecs_register_options');
 
@@ -315,8 +304,7 @@ function adaptivecs_options_sanitize($options)
     $sanitized_options['bp_md'] = ($options['bp_md']);
     $sanitized_options['bp_lg'] = ($options['bp_lg']);
     $sanitized_options['scss_output_style'] = ($options['scss_output_style']);
-    $sanitized_options['max_width'] = ($options['max_width']);
-    $sanitized_options['hspace'] = ($options['hspace']);
+    $sanitized_options['auto_min_column'] = ($options['auto_min_column']);
 
     return $sanitized_options;
 }
@@ -360,17 +348,13 @@ function adaptivecs_bp_lg_callback()
 	echo '<input type="number" name="adaptivecs_options[bp_lg]" step="0.1" value="' . $options['bp_lg'] . '" />';
 }
 
-function adaptivecs_max_width_callback()
+function adaptivecs_auto_min_column_callback()
 {
 	$options = get_option('adaptivecs_options');
-	echo '<input type="number" name="adaptivecs_options[max_width]" step="0.1" value="' . $options['max_width'] . '" />';
+	echo '<input type="number" name="adaptivecs_options[auto_min_column]" step="0.1" value="' . $options['auto_min_column'] . '" />';
 }
 
-function adaptivecs_hspace_callback()
-{
-	$options = get_option('adaptivecs_options');
-	echo '<input type="number" name="adaptivecs_options[hspace]" step="0.1" value="' . $options['hspace'] . '" />';
-}
+
 
 // Render the scss_output_style field
 function scss_output_style_callback()
@@ -463,8 +447,7 @@ function ADAPTIVECS()
             'max_column_count_lg' => 4,
             'gap' => 1.5,
             'scss_output_style' => 'Yes',
-            'max_width' => 87.5,
-            'hspace' => 2
+            'auto_min_column' => 20
         ));
         
         // Set default values if keys are not set
@@ -474,8 +457,8 @@ function ADAPTIVECS()
         $max_column_count_lg = isset($options['max_column_count_lg']) ? $options['max_column_count_lg'] : 4;
         $gap = isset($options['gap']) ? $options['gap'] : 1.5;
         $scss_output_style = isset($options['scss_output_style']) ? $options['scss_output_style'] : 'Yes';
-        $max_width = isset($options['max_width']) ? $options['max_width'] : 87.5;
-        $hspace = isset($options['hspace']) ? $options['hspace'] : 2;
+        $auto_min_column = isset($options['auto_min_column']) ? $options['auto_min_column'] : 20;
+        
 
         // Set the output style based on the option value
         if ($scss_output_style === 'Yes') {
@@ -483,7 +466,7 @@ function ADAPTIVECS()
         } else {
             $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
         }
-        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL . '$max-width: %srem;'. PHP_EOL . '$hspace: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap, $max_width, $hspace);
+        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL . '$auto-min-column: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap,$auto_min_column);
 
         $scss_variables_file = fopen(ADAPTIVECS_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
         fwrite($scss_variables_file, $scss_variables);
