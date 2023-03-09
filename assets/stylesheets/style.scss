@@ -3,7 +3,7 @@ $bp-lg: 65em;
 $max-column-count-md: 2;
 $max-column-count-lg: 4;
 $gap: 1.5rem;
-$auto-min-column: rem;
+$auto-min-column: 20rem;
 .grid-container {
 	display: grid !important;
 	gap: $gap;
