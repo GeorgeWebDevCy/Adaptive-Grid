@@ -70,7 +70,7 @@ class Gm_Adaptive_Css_Grid_Columns_Run{
 	 */
 	private function add_hooks(){
 	
-		add_action( 'plugin_action_links_' . GMADAPTIVE_PLUGIN_BASE, array( $this, 'add_plugin_action_link' ), 20 );
+		
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_backend_scripts_and_styles' ), 20 );
 	
 	}
@@ -93,12 +93,6 @@ class Gm_Adaptive_Css_Grid_Columns_Run{
 	*
 	* @return	array	An array of plugin action links.
 	*/
-	public function add_plugin_action_link( $links ) {
-
-		$links['our_shop'] = sprintf( '<a href="%s" title="Custom Link" style="font-weight:700;">%s</a>', 'https://test.test', __( 'Custom Link', 'gm-adaptive-css-grid-columns' ) );
-
-		return $links;
-	}
 
 	/**
 	 * Enqueue the backend related scripts and styles for this plugin.

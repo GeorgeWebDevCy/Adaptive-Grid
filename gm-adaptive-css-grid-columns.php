@@ -273,7 +273,7 @@ function gmadaptive_register_options()
     add_settings_field(
         'bp_md',
         // Field ID
-        __('Medium Breakpoint (in rem)', 'gm-adaptive-css-grid-columns'),
+        __('Medium Breakpoint (in em)', 'gm-adaptive-css-grid-columns'),
         // Field label
         'gmadaptive_bp_md_callback',
         // Callback function to render the field
@@ -286,7 +286,7 @@ function gmadaptive_register_options()
     add_settings_field(
         'bp_lg',
         // Field ID
-        __('Large Breakpoint (in rem)', 'gm-adaptive-css-grid-columns'),
+        __('Large Breakpoint (in em)', 'gm-adaptive-css-grid-columns'),
         // Field label
         'gmadaptive_bp_lg_callback',
         // Callback function to render the field
