@@ -102,5 +102,5 @@ An answer to that question.
 * Fixing new grid settings
 
 
-= 1.0.5.6: March 9, 2023 =
+= 1.0.5.6: March 10, 2023 =
 * Plugin Rewrite checkbox still needs fixing
