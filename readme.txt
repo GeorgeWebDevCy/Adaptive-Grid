@@ -101,6 +101,12 @@ An answer to that question.
 = 1.0.5.4: March 9, 2023 =
 * Fixing new grid settings
 
+= 1.0.5.5: March 9, 2023 =
+* Rethinking new grid settings
+
 
 = 1.0.5.6: March 10, 2023 =
 * Plugin Rewrite checkbox still needs fixing
+
+= 1.0.5.7: March 10, 2023 =
+* Interface UNit fixes
