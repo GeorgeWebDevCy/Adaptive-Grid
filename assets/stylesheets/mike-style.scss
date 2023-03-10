@@ -1,0 +1,33 @@
+.grid-container {
+	display: grid !important;
+	gap: $gap;
+}
+
+.grid-center {
+	width: min(100% - #{$hspace}, #{$max-width});
+	margin-inline: auto;
+}
+
+// .grid-item {
+// 	outline: 1px solid blue;
+// }
+
+@media (min-width: $bp-md) {
+	.grid-container {
+		grid-auto-flow: column;
+	}
+
+	@for $i from 1 through $max-column-count-md {
+		.grid-container .grid-item:nth-child(#{$max-column-count-md}n + #{$i}) {
+			grid-column: $i;
+		}
+	}
+}
+
+@media (min-width: $bp-lg) {
+	@for $f from 1 through $max-column-count-lg {
+		.grid-container .grid-item:nth-child(#{$max-column-count-lg}n + #{$f}) {
+			grid-column: $f;
+		}
+	}
+}
