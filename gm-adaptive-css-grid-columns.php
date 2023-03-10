@@ -65,6 +65,11 @@ define( 'GMADAPTIVE_PLUGIN_URL',	plugin_dir_url( GMADAPTIVE_PLUGIN_FILE ) );
  * Load the main class for the core functionality
  */
 require_once GMADAPTIVE_PLUGIN_DIR . 'core/class-gm-adaptive-css-grid-columns.php';
+require GMADAPTIVE_PLUGIN_DIR . 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+use ScssPhp\ScssPhp\Compiler;
+
 
 /**
  * The main function to load the only instance
