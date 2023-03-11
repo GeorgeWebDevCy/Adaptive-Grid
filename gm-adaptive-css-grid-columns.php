@@ -82,12 +82,30 @@ function var_dump_to_console($data) {
     echo '</script>';
 }
 
+function gmadaptive_do_plugin_update() {
+    // Update code goes here
+    // For example, you could update the plugin's database schema
+}
+
 // Register activation and deactivation hooks
 register_activation_hook( __FILE__, 'gmadaptive_activate' );
 register_deactivation_hook( __FILE__, 'gmadaptive_deactivate' );
 
 // Define activation function
 function gmadaptive_activate() {
+
+        // Check if the plugin needs to be updated
+        $current_version = get_option('gmadaptive_plugin_version');
+        $plugin_data = get_plugin_data(__FILE__);
+        $new_version = $plugin_data['Version'];
+        
+        if ($current_version !== $new_version) {
+            // Call the update function
+            gmadaptive_do_plugin_update();
+            // Update the version number
+            update_option('gmadaptive_options', $new_version);
+        }
+    
     // Add default options upon activation
 
     $default_options = array(
@@ -121,7 +139,7 @@ function gmadaptive_deactivate() {
 function gmadaptive_options_page() {
     // Load the options from the database
     $options = get_option( 'gmadaptive_options' );
-    //var_dump_to_console($options);
+    var_dump_to_console($options);
 
     // Define the default values for each option
     $default_options = array(
