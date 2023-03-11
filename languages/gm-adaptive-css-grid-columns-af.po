@@ -1,0 +1,191 @@
+# Copyright (C) 2023 GM Adaptive CSS Grid Columns
+# This file is distributed under the same license as the GM Adaptive CSS Grid Columns package.
+msgid ""
+msgstr ""
+"Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
+"POT-Creation-Date: 2023-03-09 12:18:51+00:00\n"
+"PO-Revision-Date: 2023-03-11 18:41+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. Plugin Name of the plugin/theme
+#: adaptive-css-grid-columns.php:107 adaptive-css-grid-columns.php:175
+msgid "GM Adaptive CSS Grid Columns"
+msgstr "GM Adaptive CSS Grid Columns"
+
+#: adaptive-css-grid-columns.php:109
+msgid "GM Grid"
+msgstr "GM Grid"
+
+#: adaptive-css-grid-columns.php:128
+msgid "Important Notice:"
+msgstr "Belangrike kennisgewing"
+
+#: adaptive-css-grid-columns.php:134
+msgid ""
+"The plugin only works if you correctly identify and target the parent and "
+"its direct child elements."
+msgstr ""
+"Die plugin werk net as jy die ouer en sy direkte kind-elemente korrek "
+"identifiseer en teiken."
+
+#: adaptive-css-grid-columns.php:137
+msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
+msgstr "Aanbevole bladsybouers is Bricks, Oxygen en Breakdance."
+
+#: adaptive-css-grid-columns.php:143
+msgid "How to use:"
+msgstr "Hoe om te gebruik:"
+
+#: adaptive-css-grid-columns.php:149
+msgid ""
+"The setup is quite simple. Basically, you just add two CSS classes to your "
+"elements and the plugin does the magic for you. Make sure to add the "
+"following classes to the container and direct child elements."
+msgstr ""
+"Die opstelling is redelik eenvoudig. Basies voeg jy net twee CSS-klasse by "
+"jou elemente en die plugin doen die towerkrag vir jou. Maak seker dat jy "
+"die volgende klasse by die houer voeg en kinderelemente rig."
+
+#: adaptive-css-grid-columns.php:155
+msgid "Parent Element class:"
+msgstr "Ouer Element klas:"
+
+#: adaptive-css-grid-columns.php:159
+msgid "Child Element class:"
+msgstr "Kind Element klas:"
+
+#: adaptive-css-grid-columns.php:163
+msgid "Define the maximum column count for your medium and large screen size."
+msgstr ""
+"Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
+
+#: adaptive-css-grid-columns.php:164
+msgid "Add the desired gap size (in rem)."
+msgstr "Voeg die verlangde gapingsgrootte (in rem)."
+
+#: adaptive-css-grid-columns.php:165
+msgid "Define the medium and large breakpoint (in em)."
+msgstr "Definieer die medium en groot breekpunt (in em)."
+
+#: adaptive-css-grid-columns.php:199
+msgid "Max Column Counts"
+msgstr "Maksimum kolomtellings"
+
+#: adaptive-css-grid-columns.php:209
+msgid "Max Column Count (medium)"
+msgstr "Maksimum kolomtelling (medium)"
+
+#: adaptive-css-grid-columns.php:221
+msgid "Max Column Count (large)"
+msgstr "Maksimum kolomtelling (groot)"
+
+#: adaptive-css-grid-columns.php:233
+msgid "Gap (in rem)"
+msgstr "Gaping (in rem)"
+
+#: adaptive-css-grid-columns.php:245
+msgid "Medium Breakpoint (in rem)"
+msgstr "Medium breekpunt (in rem)"
+
+#: adaptive-css-grid-columns.php:258
+msgid "Large Breakpoint (in rem)"
+msgstr "Groot breekpunt (in rem)"
+
+#: adaptive-css-grid-columns.php:270
+msgid "Minify CSS Output  (Default=Yes)"
+msgstr "Verklein CSS-afvoer (Verstek=Ja)"
+
+#: adaptive-css-grid-columns.php:299
+msgid "Enter the max column counts for different screen sizes."
+msgstr "Tik die maksimum kolomtellings in vir verskillende skermgroottes."
+
+#: adaptive-css-grid-columns.php:353 adaptive-css-grid-columns.php:354
+msgid "1"
+msgstr "1"
+
+#: adaptive-css-grid-columns.php:407
+msgid "SCSS Compiler is initialized"
+msgstr "SCSS-samesteller is geïnisialiseer"
+
+#: adaptive-css-grid-columns.php:462
+msgid "Error writing CSS file"
+msgstr "Fout met skryf van CSS-lêer"
+
+#: adaptive-css-grid-columns.php:466
+msgid "CSS file written successfully"
+msgstr "CSS lêer is suksesvol geskryf"
+
+#: adaptive-css-grid-columns.php:471
+msgid "SCSS is NOT working"
+msgstr "SCSS werk NIE"
+
+#: core/class-adaptive-css-grid-columns.php:70
+msgid "You are not allowed to clone this class."
+msgstr "Jy word nie toegelaat om hierdie klas te kloon nie."
+
+#: core/class-adaptive-css-grid-columns.php:81
+msgid "You are not allowed to unserialize this class."
+msgstr "Jy word nie toegelaat om hierdie klas te deserialiseer nie."
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
+msgid "View details"
+msgstr "Sien besonderhede"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
+msgid "More information about %s"
+msgstr "Meer inligting oor %s"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
+msgid "Check for updates"
+msgstr "Kyk vir opdaterings"
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:217
+msgctxt "the plugin title"
+msgid "The %s plugin is up to date."
+msgstr "Die %s-plugin is op datum."
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:219
+msgctxt "the plugin title"
+msgid "A new version of the %s plugin is available."
+msgstr "'n Nuwe weergawe van die %s-plugin is beskikbaar."
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:221
+msgctxt "the plugin title"
+msgid "Could not determine if updates are available for %s."
+msgstr "Kon nie bepaal of opdaterings vir %s beskikbaar is nie."
+
+#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
+msgid "Unknown update checker status \"%s\""
+msgstr "Onbekende opdateringkontroleerderstatus \"%s\""
+
+#: plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Daar is geen veranderingslog beskikbaar nie."
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns"
+msgstr "https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns"
+
+#. Description of the plugin/theme
+msgid ""
+"GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive "
+"CSS Grid Columns"
+msgstr ""
+"GM Adaptive CSS Grid Columns is 'n plugin wat jou toelaat om Adaptive CSS "
+"Grid Columns te skep"
+
+#. Author of the plugin/theme
+msgid "George Nicolaou & Michael Kellersmann"
+msgstr "George Nicolaou & Michael Kellersmann"
+
+#. Author URI of the plugin/theme
+msgid "https://www.georgenicolaou.me/"
+msgstr "https://www.georgenicolaou.me/"
