@@ -5,13 +5,13 @@
  * @package       GMADAPTIVE
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.5.7
+ * @version       1.0.5.8
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.5.7
+ * Version:       1.0.5.8
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   gm-adaptive-css-grid-columns
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'GMADAPTIVE_NAME',			'GM Adaptive CSS Grid Columns' );
 
 // Plugin version
-define( 'GMADAPTIVE_VERSION',		'1.0.5.7' );
+define( 'GMADAPTIVE_VERSION',		'1.0.5.8' );
 
 // Plugin Root File
 define( 'GMADAPTIVE_PLUGIN_FILE',	__FILE__ );
@@ -66,9 +66,21 @@ define( 'GMADAPTIVE_PLUGIN_URL',	plugin_dir_url( GMADAPTIVE_PLUGIN_FILE ) );
  */
 require_once GMADAPTIVE_PLUGIN_DIR . 'core/class-gm-adaptive-css-grid-columns.php';
 require GMADAPTIVE_PLUGIN_DIR . 'plugin-update-checker/plugin-update-checker.php';
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/autoload.php';
+require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
 
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 use ScssPhp\ScssPhp\Compiler;
+
+
+
+
+//debug function that print var_sumps to the console
+function var_dump_to_console($data) {
+    echo '<script>';
+    echo 'console.log(' . json_encode($data, JSON_HEX_TAG) . ');';
+    echo '</script>';
+}
 
 // Register activation and deactivation hooks
 register_activation_hook( __FILE__, 'gmadaptive_activate' );
@@ -91,7 +103,7 @@ function gmadaptive_activate() {
 
     // Get the existing options from the database
     $existing_options = get_option( 'gmadaptive_options' );
-
+    //var_dump_to_console($existing_options);
     // Merge the existing options with the default options
     $options = is_array( $existing_options ) ? array_merge( $default_options, $existing_options ) : $default_options;
 
@@ -109,6 +121,7 @@ function gmadaptive_deactivate() {
 function gmadaptive_options_page() {
     // Load the options from the database
     $options = get_option( 'gmadaptive_options' );
+    //var_dump_to_console($options);
 
     // Define the default values for each option
     $default_options = array(
@@ -119,7 +132,7 @@ function gmadaptive_options_page() {
         'gap' => 1.5,
         'max_width' => 87.5,
         'hspace' => 2,
-		'scss_output_style' => 'Yes'
+		'scss_output_style' => ''
     );
 
     // Loop through the default options and set any unset values to their defaults
@@ -408,25 +421,17 @@ function gmadaptive_hspace_callback()
 // Render the scss_output_style field
 function scss_output_style_callback() {
     $options = get_option('gmadaptive_options');
-	
-
+    //var_dump_to_console($options);
     $checked = isset($options['scss_output_style']) && $options['scss_output_style'] === 'Yes' ? 'checked="checked"' : '';
-	$status = $options['scss_output_style'];
-    echo "<script>console.log('$status');</script>";
-    if(isset($options['scss_output_style']) && $options['scss_output_style'] === 'No') {
-        $checked = '';
-		$status = $options['scss_output_style'];
-    echo "<script>console.log('$status');</script>";
+    //var_dump_to_console($checked);
+    if (empty($checked) || !isset($checked)) {
+        $options['scss_output_style'] = 'No';
+    } else if (isset($_POST['gmadaptive_options']['scss_output_style']) && $_POST['gmadaptive_options']['scss_output_style'] !== 'Yes') {
+        $options['scss_output_style'] = 'No';
     }
-
     echo '<input type="checkbox" name="gmadaptive_options[scss_output_style]" value="Yes" ' . $checked . '/>';
-    
-    if(empty($options['scss_output_style'])) {
-        echo '<input type="hidden" name="gmadaptive_options[scss_output_style]" value="No" />';
-		$status = $options['scss_output_style'];
-    echo "<script>console.log('$status');</script>";
-    }
 }
+
 function enqueue_my_styles() {
 	wp_enqueue_style( 'my-styles', plugin_dir_url( __FILE__ ) . 'assets/stylesheets/style.css' );
 }
@@ -487,6 +492,82 @@ function is_scss_working() {
  * @return  object|Gm_Adaptive_Css_Grid_Columns
  */
 function GMADAPTIVE() {
+    if (is_scss_working()) {
+        // SCSS is working, do something
+        $message = __("SCSS Compiler is initialized", "adaptive-css-grid-columns");
+        
+
+        // Get SCSS file
+        $scss = new Compiler(); // Initialize the scssphp compiler
+        $scss->setImportPaths(GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/');
+        
+        // Get the option value from the database for the scss output style
+
+
+        // Write the SCSS variables to file based on DB values
+        $options = get_option('gmadaptive_options', array(
+            'bp_md' => 45,
+            'bp_lg' => 65,
+            'max_column_count_md' => 2,
+            'max_column_count_lg' => 4,
+            'gap' => 1.5,
+            'scss_output_style' => 'Yes',
+            'max_width' => 87.5,
+            'hspace' => 2
+        ));
+        
+        // Set default values if keys are not set
+        $bp_md = isset($options['bp_md']) ? $options['bp_md'] : 45;
+        $bp_lg = isset($options['bp_lg']) ? $options['bp_lg'] : 65;
+        $max_column_count_md = isset($options['max_column_count_md']) ? $options['max_column_count_md'] : 2;
+        $max_column_count_lg = isset($options['max_column_count_lg']) ? $options['max_column_count_lg'] : 4;
+        $gap = isset($options['gap']) ? $options['gap'] : 1.5;
+        $scss_output_style = isset($options['scss_output_style']) ? $options['scss_output_style'] : 'Yes';
+        $max_width = isset($options['max_width']) ? $options['max_width'] : 87.5;
+        $hspace = isset($options['hspace']) ? $options['hspace'] : 2;
+
+        // Set the output style based on the option value
+        if ($scss_output_style === 'Yes') {
+            $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::COMPRESSED);
+        } else {
+            $scss->setOutputStyle(\ScssPhp\ScssPhp\OutputStyle::EXPANDED);
+        }
+        $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL . '$max-width: %srem;'. PHP_EOL . '$hspace: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap, $max_width, $hspace);
+
+        $scss_variables_file = fopen(GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
+        fwrite($scss_variables_file, $scss_variables);
+        fclose($scss_variables_file);
+
+        // Combine SCSS files
+        $variables_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/_variables.scss';
+        $mike_style_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';
+        $style_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.scss';
+        $variables_content = file_get_contents($variables_file);
+        $mike_style_content = file_get_contents($mike_style_file);
+        $style_content = $variables_content . PHP_EOL . $mike_style_content;
+        file_put_contents($style_file, $style_content);
+
+        // Compile SCSS files to CSS
+        $scssfile = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.scss';
+        $cssfile = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.css';
+        $output = $scss->compileString(file_get_contents($scssfile))->getCss();
+        file_put_contents($cssfile, $output);
+
+		// Check the result
+		if (!file_exists($cssfile)) {
+			// There was an error writing the file
+			$message = __('Error writing CSS file', 'adaptive-css-grid-columns');
+			//echo "<script>console.log('$message');</script>";
+		} else {
+			// The file was written successfully
+			$message = __('CSS file written successfully', 'adaptive-css-grid-columns');
+			//echo "<script>console.log('$message');</script>";
+		}
+	} else {
+		// SCSS is not working, do something else
+		$message = __("SCSS is NOT working", 'adaptive-css-grid-columns');
+		//echo "<script>console.log('$message');</script>";
+	}
 	return Gm_Adaptive_Css_Grid_Columns::instance();
 }
 

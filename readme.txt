@@ -110,3 +110,6 @@ An answer to that question.
 
 = 1.0.5.7: March 10, 2023 =
 * Interface UNit fixes
+
+= 1.0.5.8: March 11, 2023 =
+* Functionality back to normal after rebase

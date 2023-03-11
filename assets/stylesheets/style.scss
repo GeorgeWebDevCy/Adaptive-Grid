@@ -1,60 +1,23 @@
-$bp-md: 45em;
-$bp-lg: 65em;
-$max-column-count-md: 2;
-$max-column-count-lg: 4;
-$gap: 1.5rem;
-$auto-min-column: 20rem;
+$bp-md: 45.9em;
+$bp-lg: 67em;
+$max-column-count-md: 3;
+$max-column-count-lg: 1;
+$gap: 1.6rem;
+$max-width: 88.5rem;
+$hspace: 4rem;
 .grid-container {
 	display: grid !important;
 	gap: $gap;
 }
 
+.grid-center {
+	width: min(100% - #{$hspace}, #{$max-width});
+	margin-inline: auto;
+}
+
 // .grid-item {
 // 	outline: 1px solid blue;
 // }
-
-.grid-container.cluster {
-	display: flex !important;
-	flex-wrap: wrap;
-	gap: $gap;
-	// outline: 1px solid pink !important;
-}
-
-.grid-container.auto-grid {
-	// --min-column-size: 20rem;
-	// Sass variable from input instead
-	display: grid !important;
-	gap: $gap;
-	grid-template-columns: repeat(auto-fit, minmax(min($auto-min-column, 100%), 1fr));
-	// outline: 2px solid rebeccapurple !important;
-}
-
-.grid-container.flexible-grid {
-	display: flex !important;
-	flex-wrap: wrap;
-	gap: $gap;
-	// outline: 1px solid firebrick !important;
-}
-
-.grid-container.flexible-grid > * {
-	flex: 1;
-}
-
-.grid-container.reel {
-	// --gap: 1rem;
-	display: grid !important;
-	gap: $gap;
-	grid-auto-flow: column;
-	grid-auto-columns: calc(50% - ($gap / 2));
-	overflow-x: scroll;
-	scroll-snap-type: x mandatory;
-	scroll-padding: $gap;
-	// outline: 1px solid orangered !important;
-}
-
-.grid-container.reel > * {
-	scroll-snap-align: start;
-}
 
 @media (min-width: $bp-md) {
 	.grid-container {
@@ -62,7 +25,7 @@ $auto-min-column: 20rem;
 	}
 
 	@for $i from 1 through $max-column-count-md {
-		.grid-container > .grid-item:nth-child(#{$max-column-count-md}n + #{$i}) {
+		.grid-container .grid-item:nth-child(#{$max-column-count-md}n + #{$i}) {
 			grid-column: $i;
 		}
 	}
@@ -70,7 +33,7 @@ $auto-min-column: 20rem;
 
 @media (min-width: $bp-lg) {
 	@for $f from 1 through $max-column-count-lg {
-		.grid-container > .grid-item:nth-child(#{$max-column-count-lg}n + #{$f}) {
+		.grid-container .grid-item:nth-child(#{$max-column-count-lg}n + #{$f}) {
 			grid-column: $f;
 		}
 	}
