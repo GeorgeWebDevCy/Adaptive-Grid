@@ -119,3 +119,6 @@ An answer to that question.
 
 = 1.0.5.9: March 11, 2023 =
 * Update fixes
+
+= 1.0.5.10: March 11, 2023 =
+* Afrikanns translation added
