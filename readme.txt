@@ -113,3 +113,6 @@ An answer to that question.
 
 = 1.0.5.8: March 11, 2023 =
 * Functionality back to normal after rebase
+
+= 1.0.5.9: March 11, 2023 =
+* Language fixes
