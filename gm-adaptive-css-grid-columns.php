@@ -212,6 +212,10 @@ function gmadaptive_options_page_content()
     <br/>
     </div>
     <div>
+    <strong><?php _e('Container Element class:', 'gm-adaptive-css-grid-columns'); ?></strong>
+    grid-center (optional)
+    </div>
+    <div>
     <strong><?php _e('Parent Element class:', 'gm-adaptive-css-grid-columns'); ?></strong>
     grid-container
     </div>
@@ -339,7 +343,7 @@ function gmadaptive_register_options()
 	add_settings_field(
         'max_width',
         // Field ID
-        __('Maximum width for centered grid (in rem)', 'gm-adaptive-css-grid-columns'),
+        __('Max width for grid-center (in rem)', 'gm-adaptive-css-grid-columns'),
         // Field label
         'gmadaptive_max_width_callback',
         // Callback function to render the field
