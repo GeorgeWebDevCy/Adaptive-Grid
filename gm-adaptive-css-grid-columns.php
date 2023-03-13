@@ -5,13 +5,13 @@
  * @package       GMADAPTIVE
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.5.10
+ * @version       1.0.5.11
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.5.10
+ * Version:       1.0.5.11
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   gm-adaptive-css-grid-columns
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'GMADAPTIVE_NAME',			'GM Adaptive CSS Grid Columns' );
 
 // Plugin version
-define( 'GMADAPTIVE_VERSION',		'1.0.5.10' );
+define( 'GMADAPTIVE_VERSION',		'1.0.5.11' );
 
 // Plugin Root File
 define( 'GMADAPTIVE_PLUGIN_FILE',	__FILE__ );
@@ -190,7 +190,6 @@ function gmadaptive_options_page_content()
     <h2><strong><?php _e('Important Notice:', 'gm-adaptive-css-grid-columns'); ?></strong></h2>
     </div>
     <div>
-    <br/>
     </div>
     <div>
     <?php _e('The plugin only works if you correctly identify and target the parent and its direct child elements.', 'gm-adaptive-css-grid-columns'); ?>
@@ -205,7 +204,6 @@ function gmadaptive_options_page_content()
     <h2><strong><?php _e('How to use:', 'gm-adaptive-css-grid-columns'); ?></strong></h2>
     </div>
     <div>
-    <br/>
     </div>
     <div>
     <?php _e('The setup is quite simple. Basically, you just add two CSS classes to your elements and the plugin does the magic for you. Make sure to add the following classes to the container and direct child elements.', 'gm-adaptive-css-grid-columns'); ?>
@@ -221,6 +219,7 @@ function gmadaptive_options_page_content()
     <strong><?php _e('Child Element class:', 'gm-adaptive-css-grid-columns'); ?></strong>
     grid-item
     </div>
+    <br/>
     <div>
     1. <?php _e('Define the maximum column count for your medium and large screen size.', 'gm-adaptive-css-grid-columns'); ?><br />
     2. <?php _e('Add the desired gap size (in rem).', 'gm-adaptive-css-grid-columns'); ?><br />
@@ -230,7 +229,6 @@ function gmadaptive_options_page_content()
     <br/>
     </div>
     <div>
-    <br/>
     </div>
     </div>
     <div class="wrap">
