@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Colums\n"
-"POT-Creation-Date: 2023-03-11 19:07+0200\n"
-"PO-Revision-Date: 2023-03-11 19:07+0200\n"
+"POT-Creation-Date: 2023-03-14 02:28+0200\n"
+"PO-Revision-Date: 2023-03-14 02:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: orionas.elite@gmail.com\n"
 "Language: el_GR\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;__e;_e\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -23,7 +23,7 @@ msgstr "Δεν επιτρέπεται να κλωνοποιήσετε αυτήν
 msgid "You are not allowed to unserialize this class."
 msgstr "Δεν επιτρέπεται να καταργήσετε σειριακά αυτήν την κλάση."
 
-#: gm-adaptive-css-grid-columns.php:169 gm-adaptive-css-grid-columns.php:237
+#: gm-adaptive-css-grid-columns.php:169 gm-adaptive-css-grid-columns.php:239
 msgid "GM Adaptive CSS Grid Columns"
 msgstr "GM Adaptive CSS Grid Columns"
 
@@ -35,7 +35,7 @@ msgstr "GM Grid"
 msgid "Important Notice:"
 msgstr "Σημαντική σημείωση:"
 
-#: gm-adaptive-css-grid-columns.php:196
+#: gm-adaptive-css-grid-columns.php:195
 msgid ""
 "The plugin only works if you correctly identify and target the parent and "
 "its direct child elements."
@@ -43,17 +43,17 @@ msgstr ""
 "Το πρόσθετο λειτουργεί μόνο εάν προσδιορίσετε και στοχεύσετε σωστά τον γονέα "
 "και τα άμεσα θυγατρικά του στοιχεία."
 
-#: gm-adaptive-css-grid-columns.php:199
+#: gm-adaptive-css-grid-columns.php:198
 msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
 msgstr ""
 "Συνιστώμενες εφαρμογές δημιουργίας σελίδων είναι τα Bricks, Oxygen και "
 "Breakdance."
 
-#: gm-adaptive-css-grid-columns.php:205
+#: gm-adaptive-css-grid-columns.php:204
 msgid "How to use:"
 msgstr "Πώς να το χρησιμοποιήσετε:"
 
-#: gm-adaptive-css-grid-columns.php:211
+#: gm-adaptive-css-grid-columns.php:209
 msgid ""
 "The setup is quite simple. Basically, you just add two CSS classes to your "
 "elements and the plugin does the magic for you. Make sure to add the "
@@ -64,83 +64,87 @@ msgstr ""
 "προσθέσετε τις ακόλουθες κλάσεις στο container και να κατευθύνετε θυγατρικά "
 "στοιχεία."
 
-#: gm-adaptive-css-grid-columns.php:217
+#: gm-adaptive-css-grid-columns.php:215
+msgid "Container Element class:"
+msgstr "Κλάση θυγατρικού στοιχείου:"
+
+#: gm-adaptive-css-grid-columns.php:219
 msgid "Parent Element class:"
 msgstr "Κλάση γονικού στοιχείου:"
 
-#: gm-adaptive-css-grid-columns.php:221
+#: gm-adaptive-css-grid-columns.php:223
 msgid "Child Element class:"
 msgstr "Κλάση θυγατρικού στοιχείου:"
 
-#: gm-adaptive-css-grid-columns.php:225
+#: gm-adaptive-css-grid-columns.php:228
 msgid "Define the maximum column count for your medium and large screen size."
 msgstr "Εισαγάγετε το μέγιστο αριθμό στηλών για διαφορετικά μεγέθη οθόνης."
 
-#: gm-adaptive-css-grid-columns.php:226
+#: gm-adaptive-css-grid-columns.php:229
 msgid "Add the desired gap size (in rem)."
 msgstr "Προσθέστε το επιθυμητό μέγεθος κενού (σε ρεμ)."
 
-#: gm-adaptive-css-grid-columns.php:227
+#: gm-adaptive-css-grid-columns.php:230
 msgid "Define the medium and large breakpoint (in em)."
 msgstr "Μεσαίο Breakpoint  (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:261
+#: gm-adaptive-css-grid-columns.php:263
 msgid "Max Column Counts"
 msgstr "Μέγιστος Αριθμός Στηλών"
 
-#: gm-adaptive-css-grid-columns.php:271
+#: gm-adaptive-css-grid-columns.php:273
 msgid "Max Column Count (medium)"
 msgstr "Μέγιστος Αριθμός Στηλών (μεσαίο)"
 
-#: gm-adaptive-css-grid-columns.php:283
+#: gm-adaptive-css-grid-columns.php:285
 msgid "Max Column Count (large)"
 msgstr "Μέγιστος αριθμός στηλών (μεγάλο)"
 
-#: gm-adaptive-css-grid-columns.php:295
+#: gm-adaptive-css-grid-columns.php:297
 msgid "Gap (in rem)"
 msgstr "Κένο (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:307
+#: gm-adaptive-css-grid-columns.php:309
 msgid "Medium Breakpoint (in em)"
 msgstr "Μεσαίο Breakpoint  (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:320
+#: gm-adaptive-css-grid-columns.php:322
 msgid "Large Breakpoint (in em)"
 msgstr "Μεγάλο Breakpoint  (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:332
+#: gm-adaptive-css-grid-columns.php:334
 msgid "Minify CSS Output  (Default=Yes)"
 msgstr "Ελαχιστοποίηση εξόδου CSS (Προεπιλογή=Ναι)"
 
-#: gm-adaptive-css-grid-columns.php:344
-msgid "Maximum width for centered grid (in rem)"
-msgstr "Μέγιστο πλάτος για κεντραρισμένο πλέγμα (σε rem)"
+#: gm-adaptive-css-grid-columns.php:346
+msgid "Max width for grid-center (in rem)"
+msgstr "Μέγιστο πλάτος για grid-center (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:356
+#: gm-adaptive-css-grid-columns.php:358
 msgid "Horizontal left and right spacing (in rem)"
 msgstr "Οριζόντια απόσταση αριστερά και δεξιά (σε rem)"
 
-#: gm-adaptive-css-grid-columns.php:389
+#: gm-adaptive-css-grid-columns.php:391
 msgid "Enter the max column counts for different screen sizes."
 msgstr "Εισαγάγετε το μέγιστο αριθμό στηλών για διαφορετικά μεγέθη οθόνης."
 
-#: gm-adaptive-css-grid-columns.php:461 gm-adaptive-css-grid-columns.php:462
+#: gm-adaptive-css-grid-columns.php:463 gm-adaptive-css-grid-columns.php:464
 msgid "1"
 msgstr "1"
 
-#: gm-adaptive-css-grid-columns.php:515
+#: gm-adaptive-css-grid-columns.php:517
 msgid "SCSS Compiler is initialized"
 msgstr "Ο μεταγλωττιστής SCSS έχει αρχικοποιηθεί"
 
-#: gm-adaptive-css-grid-columns.php:577
+#: gm-adaptive-css-grid-columns.php:579
 msgid "Error writing CSS file"
 msgstr "Σφάλμα κατά την εγγραφή του αρχείου CSS"
 
-#: gm-adaptive-css-grid-columns.php:581
+#: gm-adaptive-css-grid-columns.php:583
 msgid "CSS file written successfully"
 msgstr "Το αρχείο CSS γράφτηκε με επιτυχία"
 
-#: gm-adaptive-css-grid-columns.php:586
+#: gm-adaptive-css-grid-columns.php:588
 msgid "SCSS is NOT working"
 msgstr "Το SCSS ΔΕΝ λειτουργεί"
 

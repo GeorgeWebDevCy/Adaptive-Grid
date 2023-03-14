@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
-"POT-Creation-Date: 2023-03-11 19:08+0200\n"
-"PO-Revision-Date: 2023-03-11 19:10+0200\n"
+"POT-Creation-Date: 2023-03-14 02:29+0200\n"
+"PO-Revision-Date: 2023-03-14 02:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: af\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: -e;__\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -34,63 +34,63 @@ msgstr "GM Adaptive CSS Grid Columns"
 msgid "GM Grid"
 msgstr "GM Grid"
 
-#: gm-adaptive-css-grid-columns.php:261
+#: gm-adaptive-css-grid-columns.php:263
 msgid "Max Column Counts"
 msgstr "Maksimum kolomtellings"
 
-#: gm-adaptive-css-grid-columns.php:271
+#: gm-adaptive-css-grid-columns.php:273
 msgid "Max Column Count (medium)"
 msgstr "Maksimum kolomtelling (medium)"
 
-#: gm-adaptive-css-grid-columns.php:283
+#: gm-adaptive-css-grid-columns.php:285
 msgid "Max Column Count (large)"
 msgstr "Maksimum kolomtelling (groot)"
 
-#: gm-adaptive-css-grid-columns.php:295
+#: gm-adaptive-css-grid-columns.php:297
 msgid "Gap (in rem)"
 msgstr "Gaping (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:307
+#: gm-adaptive-css-grid-columns.php:309
 msgid "Medium Breakpoint (in em)"
 msgstr "Medium breekpunt (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:320
+#: gm-adaptive-css-grid-columns.php:322
 msgid "Large Breakpoint (in em)"
 msgstr "Groot breekpunt (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:332
+#: gm-adaptive-css-grid-columns.php:334
 msgid "Minify CSS Output  (Default=Yes)"
 msgstr "Verklein CSS-afvoer (Verstek=Ja)"
 
-#: gm-adaptive-css-grid-columns.php:344
-msgid "Maximum width for centered grid (in rem)"
-msgstr "Maksimum breedte vir gesentreerde rooster (in rem)"
+#: gm-adaptive-css-grid-columns.php:346
+msgid "Max width for grid-center (in rem)"
+msgstr "Maksimum breedte vir grid-center (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:356
+#: gm-adaptive-css-grid-columns.php:358
 msgid "Horizontal left and right spacing (in rem)"
 msgstr "Horisontale links en regs spasiëring (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:389
+#: gm-adaptive-css-grid-columns.php:391
 msgid "Enter the max column counts for different screen sizes."
 msgstr "Tik die maksimum kolomtellings in vir verskillende skermgroottes."
 
-#: gm-adaptive-css-grid-columns.php:461 gm-adaptive-css-grid-columns.php:462
+#: gm-adaptive-css-grid-columns.php:463 gm-adaptive-css-grid-columns.php:464
 msgid "1"
 msgstr "1"
 
-#: gm-adaptive-css-grid-columns.php:515
+#: gm-adaptive-css-grid-columns.php:517
 msgid "SCSS Compiler is initialized"
 msgstr "SCSS-samesteller is geïnisialiseer"
 
-#: gm-adaptive-css-grid-columns.php:577
+#: gm-adaptive-css-grid-columns.php:579
 msgid "Error writing CSS file"
 msgstr "Fout met skryf van CSS-lêer"
 
-#: gm-adaptive-css-grid-columns.php:581
+#: gm-adaptive-css-grid-columns.php:583
 msgid "CSS file written successfully"
 msgstr "CSS lêer is suksesvol geskryf"
 
-#: gm-adaptive-css-grid-columns.php:586
+#: gm-adaptive-css-grid-columns.php:588
 msgid "SCSS is NOT working"
 msgstr "SCSS werk NIE"
 
