@@ -65,7 +65,6 @@ define( 'GMADAPTIVE_PLUGIN_URL',	plugin_dir_url( GMADAPTIVE_PLUGIN_FILE ) );
  * Load the main class for the core functionality
  */
 require_once GMADAPTIVE_PLUGIN_DIR . 'core/class-gm-adaptive-css-grid-columns.php';
-require GMADAPTIVE_PLUGIN_DIR . 'plugin-update-checker/plugin-update-checker.php';
 require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/autoload.php';
 require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
 
@@ -590,25 +589,5 @@ function GMADAPTIVE() {
 	}
 	return Gm_Adaptive_Css_Grid_Columns::instance();
 }
-
-//plugin updater start
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/GeorgeWebDevCy/adaptive-css-grid-columns',
-	__FILE__,
-	'adaptive-css-grid-columns'
-);
-
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
-
-//Optional: If you're using a private repository, specify the access token like this:
-//$myUpdateChecker->setAuthentication('your-token-here');
-//plugin updater end 
-
-
-//version check start
-
-//version check end
-
 
 GMADAPTIVE();

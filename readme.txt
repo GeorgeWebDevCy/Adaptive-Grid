@@ -122,3 +122,12 @@ An answer to that question.
 
 = 1.0.5.10: March 11, 2023 =
 * Afrikanns translation added
+
+= 1.0.5.11: March 12, 2023 =
+* Greek translation fixes
+
+* 1.0.5.12: March 13, 2023 
+* Afrikaans Translation Fixes
+
+* 1.0.5.13: March 13, 2023 
+* Github updater removed for repo submission
