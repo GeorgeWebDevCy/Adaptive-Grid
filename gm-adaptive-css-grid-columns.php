@@ -5,13 +5,13 @@
  * @package       GMADAPTIVE
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.5.13
+ * @version       1.0.5.14
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.5.13
+ * Version:       1.0.5.14
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   gm-adaptive-css-grid-columns
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'GMADAPTIVE_NAME',			'GM Adaptive CSS Grid Columns' );
 
 // Plugin version
-define( 'GMADAPTIVE_VERSION',		'1.0.5.13' );
+define( 'GMADAPTIVE_VERSION',		'1.0.5.14' );
 
 // Plugin Root File
 define( 'GMADAPTIVE_PLUGIN_FILE',	__FILE__ );
@@ -68,7 +68,7 @@ require_once GMADAPTIVE_PLUGIN_DIR . 'core/class-gm-adaptive-css-grid-columns.ph
 require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/autoload.php';
 require_once GMADAPTIVE_PLUGIN_DIR . 'vendor/scssphp/scssphp/scss.inc.php';
 
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+//use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 use ScssPhp\ScssPhp\Compiler;
 
 
@@ -394,45 +394,45 @@ function gmadaptive_section_callback()
 function gmadaptive_max_column_count_md_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[max_column_count_md]" value="' . $options['max_column_count_md'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[max_column_count_md]" value="' . esc_attr($options['max_column_count_md']) . '" />';
 }
 
 // Render the max_column_count_lg field
 function gmadaptive_max_column_count_lg_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[max_column_count_lg]" value="' . $options['max_column_count_lg'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[max_column_count_lg]" value="' . esc_attr($options['max_column_count_lg']) . '" />';
 }
 
 // Render the gap field
 function gmadaptive_gap_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[gap]" step="0.1" value="' . $options['gap'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[gap]" step="0.1" value="' . esc_attr($options['gap']) . '" />';
 }
 
 function gmadaptive_bp_md_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[bp_md]" step="0.1" value="' . $options['bp_md'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[bp_md]" step="0.1" value="' . esc_attr($options['bp_md']) . '" />';
 }
 
 function gmadaptive_bp_lg_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[bp_lg]" step="0.1" value="' . $options['bp_lg'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[bp_lg]" step="0.1" value="' . esc_attr($options['bp_lg']) . '" />';
 }
 
 function gmadaptive_max_width_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[max_width]" step="0.1" value="' . $options['max_width'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[max_width]" step="0.1" value="' . esc_attr($options['max_width']) . '" />';
 }
 
 function gmadaptive_hspace_callback()
 {
 	$options = get_option('gmadaptive_options');
-	echo '<input type="number" name="gmadaptive_options[hspace]" step="0.1" value="' . $options['hspace'] . '" />';
+	echo '<input type="number" name="gmadaptive_options[hspace]" step="0.1" value="' . esc_attr($options['hspace']) . '" />';
 }
 
 
