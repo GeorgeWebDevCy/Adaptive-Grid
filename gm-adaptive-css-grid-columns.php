@@ -86,16 +86,16 @@ function create_gmadaptive_folder() {
       wp_mkdir_p($plugin_dir); // Create the "gmadaptive-plugin" folder if it doesn't exist
     }
   
-    $stylesheet_dir = $plugin_dir . '/stylesheets'; // Create a path for the "stylesheets" folder
+    $stylesheet_dir = $plugin_dir . '/assets'; // Create a path for the "assets" folder
   
     if (!file_exists($stylesheet_dir)) {
-      wp_mkdir_p($stylesheet_dir); // Create the "stylesheets" folder if it doesn't exist
+      wp_mkdir_p($stylesheet_dir); // Create the "assets" folder if it doesn't exist
     }
 
-    $assets_dir = $stylesheet_dir . '/assets'; // Create a path for the "assets" folder
+    $assets_dir = $stylesheet_dir . '/stylesheets'; // Create a path for the "assets" folder
   
     if (!file_exists($assets_dir)) {
-      wp_mkdir_p($assets_dir); // Create the "assets" folder if it doesn't exist
+      wp_mkdir_p($assets_dir); // Create the "stylesheets" folder if it doesn't exist
     }
   }
   
@@ -103,7 +103,7 @@ function create_gmadaptive_folder() {
 
   function copy_file_to_upload_dir() {
     $upload_dir = wp_upload_dir();
-    $destination_dir = trailingslashit( $upload_dir['basedir'] ) . 'gmadaptive-plugin/stylesheets/assets/';
+    $destination_dir = trailingslashit( $upload_dir['basedir'] ) . 'gmadaptive-plugin/assets/stylesheets/';
 
     $varfile = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/_variables.scss';
     $mstyle_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';
@@ -552,7 +552,7 @@ add_shortcode( 'grid_container', 'grid_container_shortcode' );
 function is_scss_working() {
     $upload_dir = wp_upload_dir();
 	$scss = new Compiler(); // Initialize the scssphp compiler
-	$scss->setImportPaths($upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/assets/');
+	$scss->setImportPaths($upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/');
 	$scss->compileString( '@import "style.scss";' )->getCss();
 
 	$scss_code = 'body { color: red; }'; // Define a sample SCSS code to compile
@@ -600,7 +600,7 @@ function GMADAPTIVE() {
         // Get SCSS file
         $scss = new Compiler(); // Initialize the scssphp compiler
         //$scss->setImportPaths(GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/');
-        $scss->setImportPaths($upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/');
+        $scss->setImportPaths($upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/');
         
 
         
@@ -638,7 +638,7 @@ function GMADAPTIVE() {
         $scss_variables = sprintf('$bp-md: %sem;' . PHP_EOL . '$bp-lg: %sem;' . PHP_EOL . '$max-column-count-md: %s;' . PHP_EOL . '$max-column-count-lg: %s;' . PHP_EOL . '$gap: %srem;' . PHP_EOL . '$max-width: %srem;'. PHP_EOL . '$hspace: %srem;', $bp_md, $bp_lg, $max_column_count_md, $max_column_count_lg, $gap, $max_width, $hspace);
 
         //$scss_variables_file = fopen(GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/_variables.scss', 'w');
-        $scss_variables_file = fopen($upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/assets/_variables.scss', 'w');
+        $scss_variables_file = fopen($upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/_variables.scss', 'w');
         fwrite($scss_variables_file, $scss_variables);
         fclose($scss_variables_file);
 
@@ -646,9 +646,9 @@ function GMADAPTIVE() {
         //$variables_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/_variables.scss';
         //$mike_style_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/mike-style.scss';
         //$style_file = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.scss';
-        $variables_file = $upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/assets/_variables.scss';
-        $mike_style_file = $upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/assets/mike-style.scss';
-        $style_file = $upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/assets/style.scss';
+        $variables_file = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/_variables.scss';
+        $mike_style_file = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/mike-style.scss';
+        $style_file = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/style.scss';
         $variables_content = file_get_contents($variables_file);
         $mike_style_content = file_get_contents($mike_style_file);
         $style_content = $variables_content . PHP_EOL . $mike_style_content;
@@ -657,8 +657,8 @@ function GMADAPTIVE() {
         // Compile SCSS files to CSS
         //$scssfile = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.scss';
         //$cssfile = GMADAPTIVE_PLUGIN_DIR . 'assets/stylesheets/style.css';
-        $scssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/style.scss';
-        $cssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/stylesheets/style.css';
+        $scssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/style.scss';
+        $cssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/style.css';
         $output = $scss->compileString(file_get_contents($scssfile))->getCss();
         file_put_contents($cssfile, $output);
 
