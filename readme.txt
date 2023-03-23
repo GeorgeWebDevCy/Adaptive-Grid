@@ -2,12 +2,12 @@
 Author URI: https://www.georgenicolaou.me/
 Plugin URI: https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
 Donate link: 
-Contributors: 
+Contributors: orionaselite,picsta
 Tags: 
 Requires at least: 
-Tested up to: 
+Tested up to: 6.1.1
 Requires PHP: 
-Stable tag: 1.0.0
+Stable tag: 1.0.5.13
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
