@@ -521,8 +521,9 @@ function scss_output_style_callback() {
 
 function enqueue_my_styles() {
     $upload_dir = wp_upload_dir();
-	$enqueuedcssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/style.css';
-    wp_enqueue_style( 'my-styles', $enqueuedcssfile );
+    wp_enqueue_style( 'gm-adaptive-styles', $upload_dir['baseurl'] . '/gmadaptive-plugin/assets/stylesheets/style.css' ) ;
+
+	//wp_enqueue_style( 'my-styles', plugin_dir_url( __FILE__ ) . 'assets/stylesheets/style.css' );
     
     
 }
