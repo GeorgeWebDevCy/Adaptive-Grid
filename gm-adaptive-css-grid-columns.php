@@ -520,7 +520,11 @@ function scss_output_style_callback() {
 }
 
 function enqueue_my_styles() {
-	wp_enqueue_style( 'my-styles', plugin_dir_url( __FILE__ ) . 'assets/stylesheets/style.css' );
+    $upload_dir = wp_upload_dir();
+	$enqueuedcssfile = $upload_dir['basedir'] . '/gmadaptive-plugin/assets/stylesheets/style.css';
+    wp_enqueue_style( 'my-styles', $enqueuedcssfile );
+    
+    
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_my_styles' );
 
