@@ -7,7 +7,7 @@ Tags:
 Requires at least: 
 Tested up to: 6.1.1
 Requires PHP: 
-Stable tag: 1.0.5.13
+Stable tag: 1.0.5.14
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,3 +131,7 @@ An answer to that question.
 
 * 1.0.5.13: March 13, 2023 
 * Github updater removed for repo submission
+
+* 1.0.5.14: March 23, 2023 
+* Fixes requested for Repo submission
+
