@@ -36,6 +36,7 @@ Child Element class: grid-items
 
 GM Adaptive CSS Grid Column can be used in these different languages thanks to the following translators:
 
+* Afrikaans [George Nicolaou](https://www.georgenicolaou.me/)
 * German [Michael Kellersmann](https://profiles.wordpress.org/picsta/)
 * Greek [George Nicolaou](https://www.georgenicolaou.me/)
 
