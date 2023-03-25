@@ -3,11 +3,11 @@ Author URI: https://www.georgenicolaou.me/
 Plugin URI: https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
 Donate link: 
 Contributors: orionaselite,picsta
-Tags: 
+Tags: CSS GRID,CSS COLUMNS,BRICKS,BREAKDANCE,OXYGEN,PAGEBUILDER
 Requires at least: 
 Tested up to: 6.1.1
 Requires PHP: 
-Stable tag: 1.0.5.14
+Stable tag: 1.0.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,33 +32,12 @@ Child Element class: grid-items
 2. Add the desired gap size (in rem)
 3. Define the medium and large breakpoint (in em).
 
+== Translations ==
 
-A few notes about the sections above:
+GM Adaptive CSS Grid Column can be used in these different languages thanks to the following translators:
 
-*   "Contributors" is a comma separated list of wordpress.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
-
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
-
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
-
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
+* German [Michael Kellersmann](https://profiles.wordpress.org/picsta/)
+* Greek [George Nicolaou](https://www.georgenicolaou.me/)
 
 
 == Installation ==
@@ -68,70 +47,26 @@ An answer to that question.
 3. Search for `Adaptive CSS Grid Columns` and click 'Install Now' or click on the `upload` link to upload `adaptive-css-grid-columns.zip`
 4. Click on `Activate plugin`
 
+= Manual installation =
+
+1. Download the plugin
+2. Extract the contents of the zip file
+3. Upload the contents of the zip file to the `wp-content/plugins/` folder of your WordPress installation
+4. Activate the Code Snippets plugin from 'Plugins' page.
+
+== Frequently Asked Questions ==
+
+= Why is this plugin not working for me? =
+
+The plugin only works if you correctly identify and target the parent and it's direct child elements.
+Recommended page builder are Bricks, Oxygen and Breakdance.
+
+== Screenshots ==
+
+1. Define Your Desired Settings
+2. Add the Parent Element class: grid-container amd the Child Element class: grid-items
+
 == Changelog ==
 
-= 1.0.0: March 2, 2023 =
-* Birthday of GM Adaptive CSS Grid Columns
-
-= 1.0.1: March 3, 2023 =
-* Minor text edits 
-
-
-= 1.0.2: March 6, 2023 =
-* Added text description to admin area of the GM Adaptive CSS Grid Columns Plugin
-* Implementation of Automic Updates from the plugin screeen 
-
-= 1.0.3: March 6, 2023 =
-* Updater fix
-
-= 1.0.5: March 6, 2023 =
-* Set generated CSS file to minified
-
-= 1.0.5.1: March 8, 2023 =
-* Fixed Container not set to grid by default Issue #4 (Reported by Imran Siddiq)
-
-= 1.0.5.2: March 8, 2023 =
-* Removed unused functions to clean up code
-* Removed depricated compile refrences and used new $compiler->compileString
-
-= 1.0.5.3: March 9, 2023 =
-* Added translation Greek
-* Added more grid options
-
-= 1.0.5.4: March 9, 2023 =
-* Fixing new grid settings
-
-= 1.0.5.5: March 9, 2023 =
-* Rethinking new grid settings
-
-
-= 1.0.5.6: March 10, 2023 =
-* Plugin Rewrite checkbox still needs fixing
-
-= 1.0.5.7: March 10, 2023 =
-* Interface UNit fixes
-
-= 1.0.5.8: March 11, 2023 =
-* Functionality back to normal after rebase
-
-= 1.0.5.9: March 11, 2023 =
-* Language fixes
-
-= 1.0.5.9: March 11, 2023 =
-* Update fixes
-
-= 1.0.5.10: March 11, 2023 =
-* Afrikanns translation added
-
-= 1.0.5.11: March 12, 2023 =
-* Greek translation fixes
-
-* 1.0.5.12: March 13, 2023 
-* Afrikaans Translation Fixes
-
-* 1.0.5.13: March 13, 2023 
-* Github updater removed for repo submission
-
-* 1.0.5.14: March 23, 2023 
-* Fixes requested for Repo submission
-
+= 1.0.0: March 25, 2023 =
+* Intial release of GM Adaptive CSS Grid Columns
