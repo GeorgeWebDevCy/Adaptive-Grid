@@ -50,7 +50,7 @@ GM Adaptive CSS Grid Column can be used in these different languages thanks to t
 
 1. Go to `Plugins` in the Admin menu
 2. Click on the button `Add new`
-3. Search for `Adaptive CSS Grid Columns` and click 'Install Now' or click on the `upload` link to upload `adaptive-css-grid-columns.zip`
+3. Search for `GM Adaptive CSS Grid Columns` and click 'Install Now' or click on the `upload` link to upload `adaptive-css-grid-columns.zip`
 4. Click on `Activate plugin`
 
 = Manual installation =
