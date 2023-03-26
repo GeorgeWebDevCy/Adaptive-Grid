@@ -32,7 +32,7 @@ Child Element class: grid-items
 2. Add the desired gap size (in rem)
 3. Define the medium and large breakpoint (in em).
 
-**Quick overview of GM Adaptive CSS Grid Columns by Imran Siddiq**
+**Quick overview of GM Adaptive CSS Grid Columns by [Imran Siddiq](https://websquadron.co.uk/)**
 
 https://www.youtube.com/watch?v=lDibIKlmyv4
 
