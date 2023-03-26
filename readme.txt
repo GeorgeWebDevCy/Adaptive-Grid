@@ -58,7 +58,7 @@ GM Adaptive CSS Grid Column can be used in these different languages thanks to t
 1. Download the plugin
 2. Extract the contents of the zip file
 3. Upload the contents of the zip file to the `wp-content/plugins/` folder of your WordPress installation
-4. Activate the Code Snippets plugin from 'Plugins' page.
+4. Activate the GM Adaptive CSS Grid Columns plugin from 'Plugins' page.
 
 == Frequently Asked Questions ==
 
