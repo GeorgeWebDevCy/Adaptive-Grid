@@ -5,13 +5,13 @@
  * @package       GMADAPTIVE
  * @author        George Nicolaou & Michael Kellersmann
  * @license       gplv2
- * @version       1.0.0
+ * @version       1.0.1
  *
  * @wordpress-plugin
  * Plugin Name:   GM Adaptive CSS Grid Columns
  * Plugin URI:    https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns
  * Description:   GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns
- * Version:       1.0.0
+ * Version:       1.0.1
  * Author:        George Nicolaou & Michael Kellersmann
  * Author URI:    https://www.georgenicolaou.me/
  * Text Domain:   gm-adaptive-css-grid-columns
@@ -47,7 +47,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define( 'GMADAPTIVE_NAME',			'GM Adaptive CSS Grid Columns' );
 
 // Plugin version
-define( 'GMADAPTIVE_VERSION',		'1.0.0' );
+define( 'GMADAPTIVE_VERSION',		'1.0.1' );
 
 // Plugin Root File
 define( 'GMADAPTIVE_PLUGIN_FILE',	__FILE__ );
