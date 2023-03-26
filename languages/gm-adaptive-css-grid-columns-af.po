@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
-"POT-Creation-Date: 2023-03-14 02:29+0200\n"
-"PO-Revision-Date: 2023-03-14 02:30+0200\n"
+"POT-Creation-Date: 2023-03-26 15:03+0300\n"
+"PO-Revision-Date: 2023-03-26 15:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: af\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: -e;__\n"
+"X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: core/class-gm-adaptive-css-grid-columns.php:70
@@ -26,125 +26,145 @@ msgstr "Jy word nie toegelaat om hierdie klas te kloon nie."
 msgid "You are not allowed to unserialize this class."
 msgstr "Jy word nie toegelaat om hierdie klas te deserialiseer nie."
 
-#: gm-adaptive-css-grid-columns.php:169
+#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:306
 msgid "GM Adaptive CSS Grid Columns"
 msgstr "GM Adaptive CSS Grid Columns"
 
-#: gm-adaptive-css-grid-columns.php:171
+#: gm-adaptive-css-grid-columns.php:238
 msgid "GM Grid"
 msgstr "GM Grid"
 
-#: gm-adaptive-css-grid-columns.php:263
+#: gm-adaptive-css-grid-columns.php:257
+msgid "Important Notice:"
+msgstr "Belangrike kennisgewing"
+
+#: gm-adaptive-css-grid-columns.php:262
+msgid ""
+"The plugin only works if you correctly identify and target the parent and "
+"its direct child elements."
+msgstr ""
+"Die plugin werk net as jy die ouer en sy direkte kind-elemente korrek "
+"identifiseer en teiken."
+
+#: gm-adaptive-css-grid-columns.php:265
+msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
+msgstr "Aanbevole bladsybouers is Bricks, Oxygen en Breakdance."
+
+#: gm-adaptive-css-grid-columns.php:271
+msgid "How to use:"
+msgstr "Hoe om te gebruik:"
+
+#: gm-adaptive-css-grid-columns.php:276
+msgid ""
+"The setup is quite simple. Basically, you just add two CSS classes to your "
+"elements and the plugin does the magic for you. Make sure to add the "
+"following classes to the container and direct child elements."
+msgstr ""
+"Die opstelling is redelik eenvoudig. Basies voeg jy net twee CSS-klasse by "
+"jou elemente en die plugin doen die towerkrag vir jou. Maak seker dat jy die "
+"volgende klasse by die houer voeg en kinderelemente rig."
+
+#: gm-adaptive-css-grid-columns.php:282
+msgid "Container Element class:"
+msgstr "Container Element klas:"
+
+#: gm-adaptive-css-grid-columns.php:286
+msgid "Parent Element class:"
+msgstr "Ouer Element klas:"
+
+#: gm-adaptive-css-grid-columns.php:290
+msgid "Child Element class:"
+msgstr "Kind Element klas:"
+
+#: gm-adaptive-css-grid-columns.php:295
+msgid "Define the maximum column count for your medium and large screen size."
+msgstr ""
+"Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
+
+#: gm-adaptive-css-grid-columns.php:296
+msgid "Add the desired gap size (in rem)."
+msgstr "Voeg die verlangde gapingsgrootte (in rem)."
+
+#: gm-adaptive-css-grid-columns.php:297
+msgid "Define the medium and large breakpoint (in em)."
+msgstr "Definieer die medium en groot breekpunt (in em)."
+
+#: gm-adaptive-css-grid-columns.php:330
 msgid "Max Column Counts"
 msgstr "Maksimum kolomtellings"
 
-#: gm-adaptive-css-grid-columns.php:273
+#: gm-adaptive-css-grid-columns.php:340
 msgid "Max Column Count (medium)"
 msgstr "Maksimum kolomtelling (medium)"
 
-#: gm-adaptive-css-grid-columns.php:285
+#: gm-adaptive-css-grid-columns.php:352
 msgid "Max Column Count (large)"
 msgstr "Maksimum kolomtelling (groot)"
 
-#: gm-adaptive-css-grid-columns.php:297
+#: gm-adaptive-css-grid-columns.php:364
 msgid "Gap (in rem)"
 msgstr "Gaping (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:309
+#: gm-adaptive-css-grid-columns.php:376
 msgid "Medium Breakpoint (in em)"
 msgstr "Medium breekpunt (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:322
+#: gm-adaptive-css-grid-columns.php:389
 msgid "Large Breakpoint (in em)"
 msgstr "Groot breekpunt (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:334
+#: gm-adaptive-css-grid-columns.php:401
 msgid "Minify CSS Output  (Default=Yes)"
 msgstr "Verklein CSS-afvoer (Verstek=Ja)"
 
-#: gm-adaptive-css-grid-columns.php:346
+#: gm-adaptive-css-grid-columns.php:413
 msgid "Max width for grid-center (in rem)"
 msgstr "Maksimum breedte vir grid-center (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:358
+#: gm-adaptive-css-grid-columns.php:425
 msgid "Horizontal left and right spacing (in rem)"
 msgstr "Horisontale links en regs spasiëring (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:391
+#: gm-adaptive-css-grid-columns.php:458
 msgid "Enter the max column counts for different screen sizes."
 msgstr "Tik die maksimum kolomtellings in vir verskillende skermgroottes."
 
-#: gm-adaptive-css-grid-columns.php:463 gm-adaptive-css-grid-columns.php:464
+#: gm-adaptive-css-grid-columns.php:535 gm-adaptive-css-grid-columns.php:536
 msgid "1"
 msgstr "1"
 
-#: gm-adaptive-css-grid-columns.php:517
+#: gm-adaptive-css-grid-columns.php:602
 msgid "SCSS Compiler is initialized"
 msgstr "SCSS-samesteller is geïnisialiseer"
 
-#: gm-adaptive-css-grid-columns.php:579
+#: gm-adaptive-css-grid-columns.php:673
 msgid "Error writing CSS file"
 msgstr "Fout met skryf van CSS-lêer"
 
-#: gm-adaptive-css-grid-columns.php:583
+#: gm-adaptive-css-grid-columns.php:677
 msgid "CSS file written successfully"
 msgstr "CSS lêer is suksesvol geskryf"
 
-#: gm-adaptive-css-grid-columns.php:588
+#: gm-adaptive-css-grid-columns.php:682
 msgid "SCSS is NOT working"
 msgstr "SCSS werk NIE"
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
-msgid "View details"
-msgstr "Sien besonderhede"
+#~ msgid "View details"
+#~ msgstr "Sien besonderhede"
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
 #, php-format
-msgid "More information about %s"
-msgstr "Meer inligting oor %s"
+#~ msgid "More information about %s"
+#~ msgstr "Meer inligting oor %s"
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
-msgid "Check for updates"
-msgstr "Kyk vir opdaterings"
+#~ msgid "Check for updates"
+#~ msgstr "Kyk vir opdaterings"
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
 #, php-format
-msgid "Unknown update checker status \"%s\""
-msgstr "Onbekende opdateringkontroleerderstatus \"%s\""
+#~ msgid "Unknown update checker status \"%s\""
+#~ msgstr "Onbekende opdateringkontroleerderstatus \"%s\""
 
-#: plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
-msgstr "Daar is geen veranderingslog beskikbaar nie."
-
-#~ msgid "Important Notice:"
-#~ msgstr "Belangrike kennisgewing"
-
-#~ msgid "The plugin only works if you correctly identify and target the parent and its direct child elements."
-#~ msgstr "Die plugin werk net as jy die ouer en sy direkte kind-elemente korrek identifiseer en teiken."
-
-#~ msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
-#~ msgstr "Aanbevole bladsybouers is Bricks, Oxygen en Breakdance."
-
-#~ msgid "How to use:"
-#~ msgstr "Hoe om te gebruik:"
-
-#~ msgid "The setup is quite simple. Basically, you just add two CSS classes to your elements and the plugin does the magic for you. Make sure to add the following classes to the container and direct child elements."
-#~ msgstr "Die opstelling is redelik eenvoudig. Basies voeg jy net twee CSS-klasse by jou elemente en die plugin doen die towerkrag vir jou. Maak seker dat jy die volgende klasse by die houer voeg en kinderelemente rig."
-
-#~ msgid "Parent Element class:"
-#~ msgstr "Ouer Element klas:"
-
-#~ msgid "Child Element class:"
-#~ msgstr "Kind Element klas:"
-
-#~ msgid "Define the maximum column count for your medium and large screen size."
-#~ msgstr "Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
-
-#~ msgid "Add the desired gap size (in rem)."
-#~ msgstr "Voeg die verlangde gapingsgrootte (in rem)."
-
-#~ msgid "Define the medium and large breakpoint (in em)."
-#~ msgstr "Definieer die medium en groot breekpunt (in em)."
+#~ msgid "There is no changelog available."
+#~ msgstr "Daar is geen veranderingslog beskikbaar nie."
 
 #~ msgctxt "the plugin title"
 #~ msgid "The %s plugin is up to date."
@@ -161,8 +181,12 @@ msgstr "Daar is geen veranderingslog beskikbaar nie."
 #~ msgid "https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns"
 #~ msgstr "https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns"
 
-#~ msgid "GM Adaptive CSS Grid Columns is a plugin that allows you to create Adaptive CSS Grid Columns"
-#~ msgstr "GM Adaptive CSS Grid Columns is 'n plugin wat jou toelaat om Adaptive CSS Grid Columns te skep"
+#~ msgid ""
+#~ "GM Adaptive CSS Grid Columns is a plugin that allows you to create "
+#~ "Adaptive CSS Grid Columns"
+#~ msgstr ""
+#~ "GM Adaptive CSS Grid Columns is 'n plugin wat jou toelaat om Adaptive CSS "
+#~ "Grid Columns te skep"
 
 #~ msgid "George Nicolaou & Michael Kellersmann"
 #~ msgstr "George Nicolaou & Michael Kellersmann"

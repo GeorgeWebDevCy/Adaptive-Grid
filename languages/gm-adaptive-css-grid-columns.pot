@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the GM Adaptive CSS Grid Columns package.
 msgid ""
 msgstr ""
-"Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
-"POT-Creation-Date: 2023-03-09 12:18:51+00:00\n"
+"Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/adaptive-css-grid-columns\n"
+"POT-Creation-Date: 2023-03-25 18:24:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,154 +12,131 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: adaptive-css-grid-columns.php:107 adaptive-css-grid-columns.php:175
-msgid "GM Adaptive CSS Grid Columns"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:109
-msgid "GM Grid"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:128
-msgid "Important Notice:"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:134
-msgid "The plugin only works if you correctly identify and target the parent and its direct child elements."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:137
-msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:143
-msgid "How to use:"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:149
-msgid "The setup is quite simple. Basically, you just add two CSS classes to your elements and the plugin does the magic for you. Make sure to add the following classes to the container and direct child elements."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:155
-msgid "Parent Element class:"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:159
-msgid "Child Element class:"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:163
-msgid "Define the maximum column count for your medium and large screen size."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:164
-msgid "Add the desired gap size (in rem)."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:165
-msgid "Define the medium and large breakpoint (in em)."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:199
-msgid "Max Column Counts"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:209
-msgid "Max Column Count (medium)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:221
-msgid "Max Column Count (large)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:233
-msgid "Gap (in rem)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:245
-msgid "Medium Breakpoint (in rem)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:258
-msgid "Large Breakpoint (in rem)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:270
-msgid "Minify CSS Output  (Default=Yes)"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:299
-msgid "Enter the max column counts for different screen sizes."
-msgstr ""
-
-#: adaptive-css-grid-columns.php:353 adaptive-css-grid-columns.php:354
-msgid "1"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:407
-msgid "SCSS Compiler is initialized"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:462
-msgid "Error writing CSS file"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:466
-msgid "CSS file written successfully"
-msgstr ""
-
-#: adaptive-css-grid-columns.php:471
-msgid "SCSS is NOT working"
-msgstr ""
-
-#: core/class-adaptive-css-grid-columns.php:70
+#: core/class-gm-adaptive-css-grid-columns.php:70
 msgid "You are not allowed to clone this class."
 msgstr ""
 
-#: core/class-adaptive-css-grid-columns.php:81
+#: core/class-gm-adaptive-css-grid-columns.php:81
 msgid "You are not allowed to unserialize this class."
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:56
-msgid "View details"
+#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:306
+msgid "GM Adaptive CSS Grid Columns"
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:79
-msgid "More information about %s"
+#: gm-adaptive-css-grid-columns.php:238
+msgid "GM Grid"
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:130
-msgid "Check for updates"
+#: gm-adaptive-css-grid-columns.php:257
+msgid "Important Notice:"
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:217
-msgctxt "the plugin title"
-msgid "The %s plugin is up to date."
+#: gm-adaptive-css-grid-columns.php:262
+msgid "The plugin only works if you correctly identify and target the parent and its direct child elements."
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:219
-msgctxt "the plugin title"
-msgid "A new version of the %s plugin is available."
+#: gm-adaptive-css-grid-columns.php:265
+msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:221
-msgctxt "the plugin title"
-msgid "Could not determine if updates are available for %s."
+#: gm-adaptive-css-grid-columns.php:271
+msgid "How to use:"
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Plugin/Ui.php:227
-msgid "Unknown update checker status \"%s\""
+#: gm-adaptive-css-grid-columns.php:276
+msgid "The setup is quite simple. Basically, you just add two CSS classes to your elements and the plugin does the magic for you. Make sure to add the following classes to the container and direct child elements."
 msgstr ""
 
-#: plugin-update-checker/Puc/v5p0/Vcs/PluginUpdateChecker.php:98
-msgid "There is no changelog available."
+#: gm-adaptive-css-grid-columns.php:282
+msgid "Container Element class:"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:286
+msgid "Parent Element class:"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:290
+msgid "Child Element class:"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:295
+msgid "Define the maximum column count for your medium and large screen size."
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:296
+msgid "Add the desired gap size (in rem)."
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:297
+msgid "Define the medium and large breakpoint (in em)."
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:330
+msgid "Max Column Counts"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:340
+msgid "Max Column Count (medium)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:352
+msgid "Max Column Count (large)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:364
+msgid "Gap (in rem)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:376
+msgid "Medium Breakpoint (in em)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:389
+msgid "Large Breakpoint (in em)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:401
+msgid "Minify CSS Output  (Default=Yes)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:413
+msgid "Max width for grid-center (in rem)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:425
+msgid "Horizontal left and right spacing (in rem)"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:458
+msgid "Enter the max column counts for different screen sizes."
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:535 gm-adaptive-css-grid-columns.php:536
+msgid "1"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:602
+msgid "SCSS Compiler is initialized"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:673
+msgid "Error writing CSS file"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:677
+msgid "CSS file written successfully"
+msgstr ""
+
+#: gm-adaptive-css-grid-columns.php:682
+msgid "SCSS is NOT working"
 msgstr ""
 #. Plugin Name of the plugin/theme
 msgid "GM Adaptive CSS Grid Columns"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://www.georgenicolaou.me/plugins/adaptive-css-grid-columns"
+msgid "https://www.georgenicolaou.me/plugins/gm-adaptive-css-grid-columns"
 msgstr ""
 
 #. Description of the plugin/theme
