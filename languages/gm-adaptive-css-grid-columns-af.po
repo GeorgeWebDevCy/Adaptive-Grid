@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
-"POT-Creation-Date: 2023-03-26 15:03+0300\n"
-"PO-Revision-Date: 2023-03-27 13:21+0300\n"
+"POT-Creation-Date: 2023-03-27 23:23+0300\n"
+"PO-Revision-Date: 2023-03-27 23:27+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: af\n"
@@ -26,7 +26,7 @@ msgstr "Jy word nie toegelaat om hierdie klas te kloon nie."
 msgid "You are not allowed to unserialize this class."
 msgstr "Jy word nie toegelaat om hierdie klas te deserialiseer nie."
 
-#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:306
+#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:256
 msgid "GM Adaptive CSS Grid Columns"
 msgstr "GM Adaptive CSS Grid Columns"
 
@@ -34,122 +34,155 @@ msgstr "GM Adaptive CSS Grid Columns"
 msgid "GM Grid"
 msgstr "GM Grid"
 
-#: gm-adaptive-css-grid-columns.php:257
+#: gm-adaptive-css-grid-columns.php:267
 msgid "Important Notice:"
 msgstr "Belangrike kennisgewing"
 
-#: gm-adaptive-css-grid-columns.php:262
+#: gm-adaptive-css-grid-columns.php:269
 msgid ""
-"The plugin only works if you correctly identify and target the parent and "
-"its direct child elements."
+"The plugin only works if you correctly identify and target the parent, and "
+"it’s direct child elements. Otherwise, the plugin can't work. Recommended "
+"page builder are Bricks, Oxygen and Breakdance."
 msgstr ""
 "Die plugin werk net as jy die ouer en sy direkte kind-elemente korrek "
 "identifiseer en teiken."
 
-#: gm-adaptive-css-grid-columns.php:265
-msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
-msgstr "Aanbevole bladsybouers is Bricks, Oxygen en Breakdance."
-
-#: gm-adaptive-css-grid-columns.php:271
+#: gm-adaptive-css-grid-columns.php:272
 msgid "How to use:"
 msgstr "Hoe om te gebruik:"
 
-#: gm-adaptive-css-grid-columns.php:276
+#: gm-adaptive-css-grid-columns.php:274
 msgid ""
 "The setup is quite simple. Basically, you just add two CSS classes to your "
-"elements and the plugin does the magic for you. Make sure to add the "
-"following classes to the container and direct child elements."
+"elements and the plugin does the magic for you. \n"
+"                Make sure to add the following classes to the container and "
+"direct child elements. Use a DIV instead of a section, container, \n"
+"                or block to avoid conflicting predefined styles."
 msgstr ""
 "Die opstelling is redelik eenvoudig. Basies voeg jy net twee CSS-klasse by "
 "jou elemente en die plugin doen die towerkrag vir jou. Maak seker dat jy die "
 "volgende klasse by die houer voeg en kinderelemente rig."
 
-#: gm-adaptive-css-grid-columns.php:282
-msgid "Container Element class:"
-msgstr "Container Element klas:"
-
-#: gm-adaptive-css-grid-columns.php:286
-msgid "Parent Element class:"
-msgstr "Ouer Element klas:"
-
-#: gm-adaptive-css-grid-columns.php:290
-msgid "Child Element class:"
-msgstr "Kind Element klas:"
-
-#: gm-adaptive-css-grid-columns.php:295
-msgid "Define the maximum column count for your medium and large screen size."
+#: gm-adaptive-css-grid-columns.php:280
+msgid ""
+"Parent/Container Element class: <strong>grid-container</strong><br>\n"
+"                    Child Element class: <strong>grid-item</strong>"
 msgstr ""
-"Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
+"Ouer-/houerelementklas: <strong>rooster-houer</strong><br>\n"
+"                     Kinderelementklas: <strong>rooster-item</strong>"
 
-#: gm-adaptive-css-grid-columns.php:296
-msgid "Add the desired gap size (in rem)."
-msgstr "Voeg die verlangde gapingsgrootte (in rem)."
+#: gm-adaptive-css-grid-columns.php:285
+msgid ""
+"Additionally, there is one more CSS class available. By using <strong>grid-"
+"center</strong> on your parent (container) element, you achieve three things."
+"<br><br>1. The container will be centred on the page<br>2. Add your desired "
+"width (in rem)<br>3. Add horizontal spacing across all break points"
+msgstr ""
+"Daarbenewens is daar nog een CSS-klas beskikbaar. Deur <strong>grid-center</"
+"strong> op jou ouer (houer) element te gebruik, bereik jy drie dinge."
+"<br><br>1. Die houer sal op die bladsy gesentreer word<br>2. Voeg jou "
+"verlangde breedte (in rem) by<br>3. Voeg horisontale spasiëring oor alle "
+"breekpunte by"
 
-#: gm-adaptive-css-grid-columns.php:297
-msgid "Define the medium and large breakpoint (in em)."
-msgstr "Definieer die medium en groot breekpunt (in em)."
+#: gm-adaptive-css-grid-columns.php:288
+msgid "Minimum Setup:"
+msgstr "Minimum opstelling:"
 
-#: gm-adaptive-css-grid-columns.php:330
+#: gm-adaptive-css-grid-columns.php:291
+msgid ""
+"1. Define the maximum column count for your medium and large screen size."
+"<br>2. Add the desired gap size (in rem)<br>\n"
+"                3. Define the medium and large breakpoint (in em).<br>Save!"
+msgstr ""
+"1. Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
+"<br>2. Voeg die verlangde gapingsgrootte (in rem) by<br>\n"
+"                 3. Definieer die medium en groot breekpunt (in em)."
+"<br>Stoor!"
+
+#: gm-adaptive-css-grid-columns.php:314
 msgid "Max Column Counts"
 msgstr "Maksimum kolomtellings"
 
-#: gm-adaptive-css-grid-columns.php:340
+#: gm-adaptive-css-grid-columns.php:324
 msgid "Max Column Count (medium)"
 msgstr "Maksimum kolomtelling (medium)"
 
-#: gm-adaptive-css-grid-columns.php:352
+#: gm-adaptive-css-grid-columns.php:336
 msgid "Max Column Count (large)"
 msgstr "Maksimum kolomtelling (groot)"
 
-#: gm-adaptive-css-grid-columns.php:364
+#: gm-adaptive-css-grid-columns.php:348
 msgid "Gap (in rem)"
 msgstr "Gaping (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:376
+#: gm-adaptive-css-grid-columns.php:360
 msgid "Medium Breakpoint (in em)"
 msgstr ""
 "Medium breekpunt (in \n"
 "em)"
 
-#: gm-adaptive-css-grid-columns.php:389
+#: gm-adaptive-css-grid-columns.php:373
 msgid "Large Breakpoint (in em)"
 msgstr "Groot breekpunt (in em)"
 
-#: gm-adaptive-css-grid-columns.php:401
+#: gm-adaptive-css-grid-columns.php:385
 msgid "Minify CSS Output  (Default=Yes)"
 msgstr "Verklein CSS-afvoer (Verstek=Ja)"
 
-#: gm-adaptive-css-grid-columns.php:413
+#: gm-adaptive-css-grid-columns.php:397
 msgid "Max width for grid-center (in rem)"
 msgstr "Maksimum breedte vir grid-center (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:425
+#: gm-adaptive-css-grid-columns.php:409
 msgid "Horizontal left and right spacing (in rem)"
 msgstr "Horisontale links en regs spasiëring (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:458
+#: gm-adaptive-css-grid-columns.php:442
 msgid "Enter the max column counts for different screen sizes."
 msgstr "Tik die maksimum kolomtellings in vir verskillende skermgroottes."
 
-#: gm-adaptive-css-grid-columns.php:535 gm-adaptive-css-grid-columns.php:536
+#: gm-adaptive-css-grid-columns.php:517 gm-adaptive-css-grid-columns.php:518
 msgid "1"
 msgstr "1"
 
-#: gm-adaptive-css-grid-columns.php:602
+#: gm-adaptive-css-grid-columns.php:584
 msgid "SCSS Compiler is initialized"
 msgstr "SCSS-samesteller is geïnisialiseer"
 
-#: gm-adaptive-css-grid-columns.php:673
+#: gm-adaptive-css-grid-columns.php:655
 msgid "Error writing CSS file"
 msgstr "Fout met skryf van CSS-lêer"
 
-#: gm-adaptive-css-grid-columns.php:677
+#: gm-adaptive-css-grid-columns.php:659
 msgid "CSS file written successfully"
 msgstr "CSS lêer is suksesvol geskryf"
 
-#: gm-adaptive-css-grid-columns.php:682
+#: gm-adaptive-css-grid-columns.php:664
 msgid "SCSS is NOT working"
 msgstr "SCSS werk NIE"
+
+#~ msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
+#~ msgstr "Aanbevole bladsybouers is Bricks, Oxygen en Breakdance."
+
+#~ msgid "Container Element class:"
+#~ msgstr "Container Element klas:"
+
+#~ msgid "Parent Element class:"
+#~ msgstr "Ouer Element klas:"
+
+#~ msgid "Child Element class:"
+#~ msgstr "Kind Element klas:"
+
+#~ msgid ""
+#~ "Define the maximum column count for your medium and large screen size."
+#~ msgstr ""
+#~ "Definieer die maksimum kolomtelling vir jou medium en groot skermgrootte."
+
+#~ msgid "Add the desired gap size (in rem)."
+#~ msgstr "Voeg die verlangde gapingsgrootte (in rem)."
+
+#~ msgid "Define the medium and large breakpoint (in em)."
+#~ msgstr "Definieer die medium en groot breekpunt (in em)."
 
 #~ msgid "View details"
 #~ msgstr "Sien besonderhede"

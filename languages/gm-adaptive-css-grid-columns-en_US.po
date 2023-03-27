@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid\n"
-"POT-Creation-Date: 2023-03-27 13:18+0300\n"
-"PO-Revision-Date: 2023-03-27 13:19+0300\n"
+"POT-Creation-Date: 2023-03-27 23:21+0300\n"
+"PO-Revision-Date: 2023-03-27 23:22+0300\n"
 "Last-Translator: \n"
 "Language-Team: orionas.elite@gmail.com\n"
 "Language: en\n"
@@ -24,7 +24,7 @@ msgstr "You are not allowed to clone this class."
 msgid "You are not allowed to unserialize this class."
 msgstr "You are not allowed to clone this class."
 
-#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:306
+#: gm-adaptive-css-grid-columns.php:236 gm-adaptive-css-grid-columns.php:256
 msgid "GM Adaptive CSS Grid Columns"
 msgstr "GM Adaptive CSS Grid Columns"
 
@@ -32,119 +32,151 @@ msgstr "GM Adaptive CSS Grid Columns"
 msgid "GM Grid"
 msgstr "GM Grid"
 
-#: gm-adaptive-css-grid-columns.php:257
+#: gm-adaptive-css-grid-columns.php:267
 msgid "Important Notice:"
 msgstr "Important Notice:"
 
-#: gm-adaptive-css-grid-columns.php:262
+#: gm-adaptive-css-grid-columns.php:269
 msgid ""
-"The plugin only works if you correctly identify and target the parent and "
-"its direct child elements."
+"The plugin only works if you correctly identify and target the parent, and "
+"it’s direct child elements. Otherwise, the plugin can't work. Recommended "
+"page builder are Bricks, Oxygen and Breakdance."
 msgstr ""
 "The plugin only works if you correctly identify and target the parent and "
 "its direct child elements."
 
-#: gm-adaptive-css-grid-columns.php:265
-msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
-msgstr "Recommended page builders are Bricks, Oxygen, and Breakdance."
-
-#: gm-adaptive-css-grid-columns.php:271
+#: gm-adaptive-css-grid-columns.php:272
 msgid "How to use:"
 msgstr "How to use:"
 
-#: gm-adaptive-css-grid-columns.php:276
+#: gm-adaptive-css-grid-columns.php:274
 msgid ""
 "The setup is quite simple. Basically, you just add two CSS classes to your "
-"elements and the plugin does the magic for you. Make sure to add the "
-"following classes to the container and direct child elements."
+"elements and the plugin does the magic for you. \n"
+"                Make sure to add the following classes to the container and "
+"direct child elements. Use a DIV instead of a section, container, \n"
+"                or block to avoid conflicting predefined styles."
 msgstr ""
 "The setup is quite simple. Basically, you just add two CSS classes to your "
 "elements and the plugin does the magic for you. Make sure to add the "
 "following classes to the container and direct child elements."
 
-#: gm-adaptive-css-grid-columns.php:282
-msgid "Container Element class:"
-msgstr "Container Element class:"
+#: gm-adaptive-css-grid-columns.php:280
+msgid ""
+"Parent/Container Element class: <strong>grid-container</strong><br>\n"
+"                    Child Element class: <strong>grid-item</strong>"
+msgstr ""
+"Parent/Container Element class: <strong>grid-container</strong><br>\n"
+"                    Child Element class: <strong>grid-item</strong>"
 
-#: gm-adaptive-css-grid-columns.php:286
-msgid "Parent Element class:"
-msgstr "Parent Element class:"
+#: gm-adaptive-css-grid-columns.php:285
+msgid ""
+"Additionally, there is one more CSS class available. By using <strong>grid-"
+"center</strong> on your parent (container) element, you achieve three things."
+"<br><br>1. The container will be centred on the page<br>2. Add your desired "
+"width (in rem)<br>3. Add horizontal spacing across all break points"
+msgstr ""
+"Additionally, there is one more CSS class available. By using <strong>grid-"
+"center</strong> on your parent (container) element, you achieve three things."
+"<br><br>1. The container will be centred on the page<br>2. Add your desired "
+"width (in rem)<br>3. Add horizontal spacing across all break points"
 
-#: gm-adaptive-css-grid-columns.php:290
-msgid "Child Element class:"
-msgstr "Child Element class:"
+#: gm-adaptive-css-grid-columns.php:288
+msgid "Minimum Setup:"
+msgstr "Minimum Setup:"
 
-#: gm-adaptive-css-grid-columns.php:295
-msgid "Define the maximum column count for your medium and large screen size."
-msgstr "Define the maximum column count for your medium and large screen size."
+#: gm-adaptive-css-grid-columns.php:291
+msgid ""
+"1. Define the maximum column count for your medium and large screen size."
+"<br>2. Add the desired gap size (in rem)<br>\n"
+"                3. Define the medium and large breakpoint (in em).<br>Save!"
+msgstr ""
+"1. Define the maximum column count for your medium and large screen size."
+"<br>2. Add the desired gap size (in rem)<br>\n"
+"                3. Define the medium and large breakpoint (in em).<br>Save!"
 
-#: gm-adaptive-css-grid-columns.php:296
-msgid "Add the desired gap size (in rem)."
-msgstr "Add the desired gap size (in rem)."
-
-#: gm-adaptive-css-grid-columns.php:297
-msgid "Define the medium and large breakpoint (in em)."
-msgstr "Define the medium and large breakpoint (in em)."
-
-#: gm-adaptive-css-grid-columns.php:330
+#: gm-adaptive-css-grid-columns.php:314
 msgid "Max Column Counts"
 msgstr "Max Column Counts"
 
-#: gm-adaptive-css-grid-columns.php:340
+#: gm-adaptive-css-grid-columns.php:324
 msgid "Max Column Count (medium)"
 msgstr "Max Column Count (medium)"
 
-#: gm-adaptive-css-grid-columns.php:352
+#: gm-adaptive-css-grid-columns.php:336
 msgid "Max Column Count (large)"
 msgstr "Max Column Count (large)"
 
-#: gm-adaptive-css-grid-columns.php:364
+#: gm-adaptive-css-grid-columns.php:348
 msgid "Gap (in rem)"
 msgstr "Max Column Count (large)"
 
-#: gm-adaptive-css-grid-columns.php:376
+#: gm-adaptive-css-grid-columns.php:360
 msgid "Medium Breakpoint (in em)"
 msgstr "Medium Breakpoint (in em)"
 
-#: gm-adaptive-css-grid-columns.php:389
+#: gm-adaptive-css-grid-columns.php:373
 msgid "Large Breakpoint (in em)"
 msgstr "Large Breakpoint (in em)"
 
-#: gm-adaptive-css-grid-columns.php:401
+#: gm-adaptive-css-grid-columns.php:385
 msgid "Minify CSS Output  (Default=Yes)"
 msgstr "Minify CSS Output  (Default=Yes)"
 
-#: gm-adaptive-css-grid-columns.php:413
+#: gm-adaptive-css-grid-columns.php:397
 msgid "Max width for grid-center (in rem)"
 msgstr "Max width for grid-center (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:425
+#: gm-adaptive-css-grid-columns.php:409
 msgid "Horizontal left and right spacing (in rem)"
 msgstr "Horizontal left and right spacing (in rem)"
 
-#: gm-adaptive-css-grid-columns.php:458
+#: gm-adaptive-css-grid-columns.php:442
 msgid "Enter the max column counts for different screen sizes."
 msgstr "Enter the max column counts for different screen sizes."
 
-#: gm-adaptive-css-grid-columns.php:537 gm-adaptive-css-grid-columns.php:538
+#: gm-adaptive-css-grid-columns.php:517 gm-adaptive-css-grid-columns.php:518
 msgid "1"
 msgstr "1"
 
-#: gm-adaptive-css-grid-columns.php:604
+#: gm-adaptive-css-grid-columns.php:584
 msgid "SCSS Compiler is initialized"
 msgstr "SCSS Compiler is initialized"
 
-#: gm-adaptive-css-grid-columns.php:675
+#: gm-adaptive-css-grid-columns.php:655
 msgid "Error writing CSS file"
 msgstr "Error writing CSS file"
 
-#: gm-adaptive-css-grid-columns.php:679
+#: gm-adaptive-css-grid-columns.php:659
 msgid "CSS file written successfully"
 msgstr "CSS file written successfully"
 
-#: gm-adaptive-css-grid-columns.php:684
+#: gm-adaptive-css-grid-columns.php:664
 msgid "SCSS is NOT working"
 msgstr "SCSS is NOT working"
+
+#~ msgid "Recommended page builders are Bricks, Oxygen, and Breakdance."
+#~ msgstr "Recommended page builders are Bricks, Oxygen, and Breakdance."
+
+#~ msgid "Container Element class:"
+#~ msgstr "Container Element class:"
+
+#~ msgid "Parent Element class:"
+#~ msgstr "Parent Element class:"
+
+#~ msgid "Child Element class:"
+#~ msgstr "Child Element class:"
+
+#~ msgid ""
+#~ "Define the maximum column count for your medium and large screen size."
+#~ msgstr ""
+#~ "Define the maximum column count for your medium and large screen size."
+
+#~ msgid "Add the desired gap size (in rem)."
+#~ msgstr "Add the desired gap size (in rem)."
+
+#~ msgid "Define the medium and large breakpoint (in em)."
+#~ msgstr "Define the medium and large breakpoint (in em)."
 
 #~ msgid "View details"
 #~ msgstr "View details"
