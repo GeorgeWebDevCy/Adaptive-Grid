@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Colums\n"
 "POT-Creation-Date: 2023-03-14 02:28+0200\n"
-"PO-Revision-Date: 2023-03-14 02:29+0200\n"
+"PO-Revision-Date: 2023-03-27 13:26+0300\n"
 "Last-Translator: \n"
 "Language-Team: orionas.elite@gmail.com\n"
 "Language: el_GR\n"
@@ -106,11 +106,11 @@ msgstr "Κένο (σε rem)"
 
 #: gm-adaptive-css-grid-columns.php:309
 msgid "Medium Breakpoint (in em)"
-msgstr "Μεσαίο Breakpoint  (σε rem)"
+msgstr "Μεσαίο Breakpoint  (σε em)"
 
 #: gm-adaptive-css-grid-columns.php:322
 msgid "Large Breakpoint (in em)"
-msgstr "Μεγάλο Breakpoint  (σε rem)"
+msgstr "Μεγάλο Breakpoint  (σε em)"
 
 #: gm-adaptive-css-grid-columns.php:334
 msgid "Minify CSS Output  (Default=Yes)"

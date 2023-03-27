@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: GM Adaptive CSS Grid Columns 1.0.5.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Adaptive-Grid\n"
 "POT-Creation-Date: 2023-03-26 15:03+0300\n"
-"PO-Revision-Date: 2023-03-26 15:07+0300\n"
+"PO-Revision-Date: 2023-03-27 13:21+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: af\n"
@@ -107,11 +107,13 @@ msgstr "Gaping (in rem)"
 
 #: gm-adaptive-css-grid-columns.php:376
 msgid "Medium Breakpoint (in em)"
-msgstr "Medium breekpunt (in rem)"
+msgstr ""
+"Medium breekpunt (in \n"
+"em)"
 
 #: gm-adaptive-css-grid-columns.php:389
 msgid "Large Breakpoint (in em)"
-msgstr "Groot breekpunt (in rem)"
+msgstr "Groot breekpunt (in em)"
 
 #: gm-adaptive-css-grid-columns.php:401
 msgid "Minify CSS Output  (Default=Yes)"
