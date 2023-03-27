@@ -7,7 +7,7 @@ Tags: CSS GRID,CSS COLUMNS,BRICKS,BREAKDANCE,OXYGEN,PAGEBUILDER
 Requires at least: 
 Tested up to: 6.1.1
 Requires PHP: 
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,3 +79,6 @@ Recommended page builder are Bricks, Oxygen and Breakdance.
 
 = 1.0.1: March 27, 2023 =
 * Fixed bug with css being cached after options had been changed. Thanks to Imran Siddiq / Websquadron aka @flickimp
+
+= 1.0.2: March 27, 2023 =
+* Label fixes
