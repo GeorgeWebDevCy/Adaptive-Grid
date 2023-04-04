@@ -5,9 +5,9 @@ Donate link:
 Contributors: orionaselite,picsta
 Tags: CSS GRID,CSS COLUMNS,BRICKS,BREAKDANCE,OXYGEN,PAGEBUILDER
 Requires at least: 
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,3 +108,6 @@ This plugin works based on the “Mobile First” principle, which means everyth
 
 = 1.0.3: March 28, 2023 =
 * Admin UI fixes
+
+= 1.0.4: March 28, 2023 =
+* WordPress 6.2 Compatibility Checks 
